@@ -9,6 +9,7 @@ A certain block game, based on https://github.com/smartcmd/MinecraftConsoles ([`
  - Directory structure (`vcxproj.filters`) has been restored and manually optimized.
  - IWYU has been run on the entire codebase.
  - PCH abuse has been eliminated (`stdafx.h` no longer exists).
+ - Remove all statements `using namespace std;`.
  - Remove some silly macros (such as AUTO_VAR...).
  - `.clang-format` has been applied throughout the codebase.
  - It can be compiled under Linux (via [msvc-wine](https://github.com/mstorsjo/msvc-wine) + clang).

@@ -1,0 +1,16 @@
+CompileFlags:
+    Add:
+        - -isystem
+        - /opt/msvc/vc/tools/msvc/14.44.35207/atlmfc/include
+        - -isystem
+        - /opt/msvc/vc/tools/msvc/14.44.35207/include
+        - -isystem
+        - /opt/msvc/kits/10/include/10.0.26100.0/shared
+        - -isystem
+        - /opt/msvc/kits/10/include/10.0.26100.0/ucrt
+        - -isystem
+        - /opt/msvc/kits/10/include/10.0.26100.0/um
+        - -isystem
+        - /opt/msvc/kits/10/include/10.0.26100.0/winrt
+        - -isystem
+        - /opt/msvc/kits/10/include/10.0.26100.0/km
