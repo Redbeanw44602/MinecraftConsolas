@@ -1,3 +1,7 @@
+# NOTE:
+# This is just an example; you can adjust the path and rename this file
+# to .clangd to make the language server work on non-Windows platforms.
+
 CompileFlags:
     Add:
         - -isystem
