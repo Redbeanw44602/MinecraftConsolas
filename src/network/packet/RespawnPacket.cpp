@@ -69,7 +69,7 @@ void RespawnPacket::read(DataInputStream* dis) // throws IOException
     difficulty    = dis->readByte();
     m_newSeaLevel = dis->readBoolean();
     m_newEntityId = dis->readShort();
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_xzSize    = dis->readShort();
     m_hellScale = dis->read();
 #endif
@@ -90,7 +90,7 @@ void RespawnPacket::write(DataOutputStream* dos) // throws IOException
     dos->writeByte(difficulty);
     dos->writeBoolean(m_newSeaLevel);
     dos->writeShort(m_newEntityId);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeShort(m_xzSize);
     dos->write(m_hellScale);
 #endif

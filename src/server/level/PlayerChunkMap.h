@@ -15,7 +15,7 @@ class TileEntity;
 
 class PlayerChunkMap {
 public:
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int MAX_VIEW_DISTANCE = 30;
 #else
     static const int MAX_VIEW_DISTANCE = 15;

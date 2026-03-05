@@ -1471,7 +1471,7 @@ void PlayerConnection::handleSetCreativeModeSlot(
 
         if (item != NULL && item->id == Item::map_Id) {
             int mapScale = 3;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             int scale    = MapItemSavedData::MAP_SIZE * 2 * (1 << mapScale);
             int centreXC = (int)(Math::round(player->x / scale) * scale);
             int centreZC = (int)(Math::round(player->z / scale) * scale);

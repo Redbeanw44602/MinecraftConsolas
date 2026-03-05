@@ -122,7 +122,7 @@ void _MapDataMappings_old::setMapping(int id, PlayerUID xuid, int dimension) {
     }
 }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 void DirectoryLevelStorage::PlayerMappings::addMapping(
     int id,
     int centreX,
@@ -208,7 +208,7 @@ DirectoryLevelStorage::DirectoryLevelStorage(
     m_saveFile                  = saveFile;
     m_bHasLoadedMapDataMappings = false;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_usedMappings = byteArray(MAXIMUM_MAP_SAVE_DATA / 8);
 #endif
 }
@@ -221,7 +221,7 @@ DirectoryLevelStorage::~DirectoryLevelStorage() {
         delete it->second;
     }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     delete m_usedMappings.data;
 #endif
 }
@@ -268,7 +268,7 @@ ChunkStorage* DirectoryLevelStorage::createChunkStorage(Dimension* dimension) {
 
 LevelData* DirectoryLevelStorage::prepareLevel() {
     // 4J Stu Added
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     ConsoleSavePath mapFile = getDataFile(L"largeMapDataMappings");
 #else
     ConsoleSavePath mapFile = getDataFile(L"mapDataMappings");
@@ -302,7 +302,7 @@ LevelData* DirectoryLevelStorage::prepareLevel() {
         {
             getSaveFile()->setFilePointer(fileEntry, 0, NULL, FILE_BEGIN);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             byteArray data(fileEntry->getFileSize());
             getSaveFile()->readFile(
                 fileEntry,
@@ -663,7 +663,7 @@ int DirectoryLevelStorage::getAuxValueForMap(
     int  mapId        = -1;
     bool foundMapping = false;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     auto it = m_playerMappings.find(xuid);
     if (it != m_playerMappings.end()) {
         foundMapping =
@@ -726,7 +726,7 @@ int DirectoryLevelStorage::getAuxValueForMap(
 void DirectoryLevelStorage::saveMapIdLookup() {
     if (StorageManager.GetSaveDisabled()) return;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     ConsoleSavePath file = getDataFile(L"largeMapDataMappings");
 #else
     ConsoleSavePath file = getDataFile(L"mapDataMappings");
@@ -737,7 +737,7 @@ void DirectoryLevelStorage::saveMapIdLookup() {
         FileEntry* fileEntry = m_saveFile->createFile(file);
         m_saveFile->setFilePointer(fileEntry, 0, NULL, FILE_BEGIN);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         ByteArrayOutputStream baos;
         DataOutputStream      dos(&baos);
         dos.writeInt(m_playerMappings.size());
@@ -772,7 +772,7 @@ void DirectoryLevelStorage::saveMapIdLookup() {
 }
 
 void DirectoryLevelStorage::dontSaveMapMappingForPlayer(PlayerUID xuid) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     auto it = m_playerMappings.find(xuid);
     if (it != m_playerMappings.end()) {
         for (auto itMap = it->second.m_mappings.begin();
@@ -801,7 +801,7 @@ void DirectoryLevelStorage::deleteMapFilesForPlayer(
 }
 
 void DirectoryLevelStorage::deleteMapFilesForPlayer(PlayerUID xuid) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     auto it = m_playerMappings.find(xuid);
     if (it != m_playerMappings.end()) {
         for (auto itMap = it->second.m_mappings.begin();

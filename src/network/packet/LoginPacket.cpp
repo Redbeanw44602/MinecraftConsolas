@@ -150,7 +150,7 @@ void LoginPacket::read(DataInputStream* dis) // throws IOException
     m_isGuest               = dis->readBoolean();
     m_newSeaLevel           = dis->readBoolean();
     m_uiGamePrivileges      = dis->readInt();
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_xzSize    = dis->readShort();
     m_hellScale = dis->read();
 #endif
@@ -183,7 +183,7 @@ void LoginPacket::write(DataOutputStream* dos) // throws IOException
     dos->writeBoolean(m_isGuest);
     dos->writeBoolean(m_newSeaLevel);
     dos->writeInt(m_uiGamePrivileges);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeShort(m_xzSize);
     dos->write(m_hellScale);
 #endif

@@ -364,7 +364,7 @@ void LocalPlayer::aiStep() {
                            // into flying mode whilst sneaking?
         }
     } else if (abilities.flying) {
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
         if (!abilities.debugflying)
 #endif
         {
@@ -406,7 +406,7 @@ void LocalPlayer::aiStep() {
     // 4J-PB - If we're in Creative Mode, allow flying on ground
     if (!abilities.mayfly && !isAllowedToFly()) {
         if (onGround && abilities.flying) {
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
             if (!abilities.debugflying)
 #endif
             {
@@ -422,7 +422,7 @@ void LocalPlayer::aiStep() {
         // 4J-PB - To let the player build easily while flying, we need to
         // change this
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
         if (abilities.debugflying) {
             flyX = (float)viewVector->x * input->ya;
             flyY = (float)viewVector->y * input->ya;

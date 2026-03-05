@@ -93,7 +93,7 @@ PlayerList::PlayerList(MinecraftServer* server) {
 
 #ifdef __PSVITA__
     viewDistance = 3;
-#elif defined _LARGE_WORLDS
+#elif defined MINECRAFT_LARGE_WORLD
     viewDistance = 16;
 #else
     viewDistance = 10;
@@ -189,7 +189,7 @@ void PlayerList::placeNewPlayer(
 
     if (newPlayer) {
         int mapScale = 3;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         int scale    = MapItemSavedData::MAP_SIZE * 2 * (1 << mapScale);
         int centreXC = (int)(Math::round(player->x / scale) * scale);
         int centreZC = (int)(Math::round(player->z / scale) * scale);
@@ -1271,7 +1271,7 @@ bool PlayerList::isOp(const std::wstring& name) { return false; }
 
 bool PlayerList::isOp(std::shared_ptr<ServerPlayer> player) {
     bool cheatsEnabled = app.GetGameHostOption(eGameHostOption_CheatsEnabled);
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     cheatsEnabled = cheatsEnabled || app.GetUseDPadForDebug();
 #endif
     INetworkPlayer* networkPlayer = player->connection->getNetworkPlayer();

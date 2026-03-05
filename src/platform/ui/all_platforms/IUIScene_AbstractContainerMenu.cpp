@@ -1244,7 +1244,7 @@ bool IUIScene_AbstractContainerMenu::handleKeyDown(
     // if(pMinecraft->player->GetXboxPad()!=pInputData->UserIndex) return S_OK;
 
     switch (iAction) {
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #if TO_BE_IMPLEMENTED
     case VK_PAD_RTHUMB_PRESS:
         itemEditorKeyPress = TRUE;
@@ -1415,7 +1415,7 @@ bool IUIScene_AbstractContainerMenu::handleKeyDown(
         }
         bHandled = true;
     }
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #if TO_BE_IMPLEMENTED
     else if (itemEditorKeyPress == TRUE) {
         HXUIOBJ hFocusObject = GetFocus(pInputData->UserIndex);

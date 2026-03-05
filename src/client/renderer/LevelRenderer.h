@@ -57,7 +57,7 @@ class LevelRenderer : public LevelListener {
 
 public:
     static const int CHUNK_XZSIZE = 16;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int CHUNK_SIZE = 16;
 #else
     static const int CHUNK_SIZE = 16;
@@ -349,7 +349,7 @@ public:
     // This is the TOTAL area of columns of chunks to be allocated for render
     // round the players. So for one player, it would be a region of
     // sqrt(PLAYER_RENDER_AREA) x sqrt(PLAYER_RENDER_AREA)
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int PLAYER_VIEW_DISTANCE =
         18; // Straight line distance from centre to extent of visible world
     static const int PLAYER_RENDER_AREA =
@@ -428,7 +428,7 @@ public:
     std::int64_t     lastDirtyChunkFound;
     static const int FORCE_DIRTY_CHUNK_CHECK_PERIOD_MS = 250;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int MAX_CONCURRENT_CHUNK_REBUILDS = 4;
     static const int MAX_CHUNK_REBUILD_THREADS =
         MAX_CONCURRENT_CHUNK_REBUILDS - 1;

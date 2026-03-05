@@ -66,7 +66,7 @@ bool StrongholdFeature::isFeatureChunk(int x, int z, bool bIsSuperflat) {
         do {
             for (int i = 0; i < strongholdPos_length; i++) {
                 double dist = 0.0;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                 if (level->dimension->getXZSize() < (2.25f * 32.0f)) {
                     // Xbox360/PS3 distances
                     dist =
@@ -161,7 +161,7 @@ bool StrongholdFeature::isFeatureChunk(int x, int z, bool bIsSuperflat) {
             ++findAttempts;
 
             // 4J Stu - Randomise the angles for retries as well
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             angle = random.nextDouble() * PI * 2.0;
 #endif
         } while (!hasFoundValidPos && findAttempts < MAX_STRONGHOLD_ATTEMPTS);

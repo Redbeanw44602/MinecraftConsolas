@@ -247,7 +247,7 @@ bool UILayer::NavigateToScene(int iPad, EUIScene scene, void* initData) {
     UIScene* newScene = NULL;
     switch (scene) {
         // Debug
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     case eUIScene_DebugOverlay:
         newScene = new UIScene_DebugOverlay(iPad, initData, this);
         break;

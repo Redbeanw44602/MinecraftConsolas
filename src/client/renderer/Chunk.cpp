@@ -39,7 +39,7 @@
 
 int Chunk::updates = 0;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 DWORD Chunk::tlsIdx = TlsAlloc();
 
 void Chunk::CreateNewThreadStorage() {
@@ -218,7 +218,7 @@ void Chunk::rebuild() {
     //	if (!dirty) return;
     PIXBeginNamedEvent(0, "Rebuild section A");
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     Tesselator* t = Tesselator::getInstance();
 #else
     Chunk::t = Tesselator::getInstance(); // 4J - added - static initialiser
@@ -262,7 +262,7 @@ void Chunk::rebuild() {
     // it is ordered by x then z then y so just getting a small range of y out
     // of it would involve getting the whole thing into the cache anyway.
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     unsigned char* tileIds = GetTileIdsStorage();
 #else
     static unsigned char tileIds[16 * 16 * Level::maxBuildHeight];

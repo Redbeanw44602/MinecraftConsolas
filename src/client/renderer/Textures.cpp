@@ -133,7 +133,7 @@ wchar_t* Textures::preLoaded[TN_COUNT] = {
     L"mob/wolf_collar",
     L"mob/zombie_villager",
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     L"misc/additionalmapicons",
 #endif
 
@@ -1290,7 +1290,7 @@ TEXTURE_NAME TUImages[] = {
     TN_PARTICLES,
     TN_MOB_ZOMBIE_VILLAGER,
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     TN_MISC_ADDITIONALMAPICONS,
 #endif
 

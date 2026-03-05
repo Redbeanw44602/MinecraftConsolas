@@ -20,7 +20,7 @@ private:
     //	HANDLE hHeap;
     static void*        pvHeap;
     static unsigned int pagesCommitted;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const unsigned int CSF_PAGE_SIZE = 64 * 1024;
     static const unsigned int MAX_PAGE_COUNT =
         32 * 1024; // 2GB virtual allocation

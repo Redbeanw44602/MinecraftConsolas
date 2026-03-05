@@ -1594,7 +1594,7 @@ int APIENTRY WinMain(
 				app.DebugPrintf("***  - APPLYING GAME SETTINGS CHANGE for pad %d\n",i);
 				app.ApplyGameSettingsChanged(i);
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 				if(app.DebugSettingsOn())
 				{
 					app.ActionDebugMask(i);

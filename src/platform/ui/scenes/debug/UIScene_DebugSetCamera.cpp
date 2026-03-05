@@ -14,7 +14,7 @@
 #include "world/phys/Vec3.h"
 
 class UILayer;
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #include "client/Minecraft.h"
 #include "client/multiplayer/MultiPlayerLocalPlayer.h"
 #include "util/console/StringHelpers.h"

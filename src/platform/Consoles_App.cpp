@@ -198,7 +198,7 @@ CMinecraftApp::CMinecraftApp() {
     m_bChangingSessionType       = false;
     m_bReallyChangingSessionType = false;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 
 #ifdef _CONTENT_PACKAGE
     m_bDebugOptions =
@@ -2399,7 +2399,7 @@ void CMinecraftApp::ClearGameSettingsChangedFlag(int iPad) {
 // Remove the debug settings in the content package build
 //
 ////////////////////////////
-#ifndef _DEBUG_MENUS_ENABLED
+#ifndef MINECRAFT_DEBUG_MENU
 unsigned int CMinecraftApp::GetGameSettingsDebugMask(
     int  iPad,
     bool bOverridePlayer

@@ -128,7 +128,7 @@ UIScene_InGamePlayerOptionsMenu::UIScene_InGamePlayerOptionsMenu(
 
     if (m_editingSelf) {
 #if (defined(_CONTENT_PACKAGE)                                                 \
-     || defined(_FINAL_BUILD) && !defined(_DEBUG_MENUS_ENABLED))
+     || defined(_FINAL_BUILD) && !defined(MINECRAFT_DEBUG_MENU))
         removeControl(&m_checkboxes[eControl_Op], true);
 #else
         m_checkboxes[eControl_Op].init(
@@ -428,7 +428,7 @@ void UIScene_InGamePlayerOptionsMenu::handleInput(
                 app.GetGameHostOption(eGameHostOption_CheatsEnabled) != 0;
             if (m_editingSelf) {
 #if (defined(_CONTENT_PACKAGE)                                                 \
-     || defined(_FINAL_BUILD) && !defined(_DEBUG_MENUS_ENABLED))
+     || defined(_FINAL_BUILD) && !defined(MINECRAFT_DEBUG_MENU))
 #else
                 Player::setPlayerGamePrivilege(
                     m_playerPrivileges,

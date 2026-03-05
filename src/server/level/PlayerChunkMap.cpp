@@ -102,7 +102,7 @@ void PlayerChunkMap::PlayerChunk::
 
     player->chunksToSend.push_back(pos);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     parent->getLevel()->cache->dontDrop(pos.x, pos.z); // 4J Added;
 #endif
 }
@@ -696,7 +696,7 @@ void PlayerChunkMap::add(std::shared_ptr<ServerPlayer> player) {
         )
     );
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     getLevel()->cache->dontDrop(xc, zc);
 #endif
 

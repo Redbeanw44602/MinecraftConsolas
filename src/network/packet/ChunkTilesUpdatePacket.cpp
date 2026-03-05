@@ -54,7 +54,7 @@ ChunkTilesUpdatePacket::ChunkTilesUpdatePacket(
 void ChunkTilesUpdatePacket::read(DataInputStream* dis) // throws IOException
 {
     // 4J - changed format. See comments in write method.
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     xc = dis->readShort();
     zc = dis->readShort();
     xc = (xc << 16) >> 16;
@@ -95,7 +95,7 @@ void ChunkTilesUpdatePacket::read(DataInputStream* dis) // throws IOException
 void ChunkTilesUpdatePacket::write(DataOutputStream* dos) // throws IOException
 {
     // 4J - changed format to reduce size of these packets.
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeShort(xc);
     dos->writeShort(zc);
 #else

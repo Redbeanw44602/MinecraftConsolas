@@ -199,7 +199,7 @@ LevelChunk* MultiPlayerChunkCache::create(int x, int z) {
 
             // If we're the host, then don't create the chunk, share data from
             // the server's copy
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             LevelChunk* serverChunk =
                 MinecraftServer::getInstance()
                     ->getLevel(level->dimension->id)

@@ -5,7 +5,7 @@ class ProgressListener;
 class TilePos;
 
 // The maximum number of chunks that we can store
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 // 4J Stu - Our default map (at zoom level 3) is 1024x1024 blocks (or 64 chunks)
 #define LEVEL_MAX_WIDTH (5 * 64) //(6*54)
 #else
@@ -17,7 +17,7 @@ class TilePos;
 // Scale was 8 in the Java game, but that would make our nether tiny
 // Every 1 block you move in the nether maps to HELL_LEVEL_SCALE blocks in the
 // overworld
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 #define HELL_LEVEL_MAX_SCALE 8
 #else
 #define HELL_LEVEL_MAX_SCALE 3

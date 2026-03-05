@@ -50,7 +50,7 @@ void HellDimension::updateLightRamp() {
 }
 
 ChunkSource* HellDimension::createRandomLevelSource() const {
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     if (app.DebugSettingsOn()
         && app.GetGameSettingsDebugMask(ProfileManager.GetPrimaryPad())
                & (1L << eDebugSetting_SuperflatNether)) {

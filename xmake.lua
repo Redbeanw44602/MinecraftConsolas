@@ -1,15 +1,36 @@
 add_rules('mode.debug', 'mode.release')
 
+-- options
+
+option('debug-menu')
+    set_default(true)
+    set_showmenu(true)
+    set_description('Enable in-game debug menu feature.')
+option_end()
+
+option('large-world')
+    set_default(true)
+    set_showmenu(true)
+    set_description('Enable large world feature.')
+option_end()
+
+-- global settings
+
 set_allowedplats('windows')
 set_allowedarchs('windows|x64')
 
 set_runtimes('MT')
 
--- set_warnings('all', 'extra')
-set_warnings('none')
-set_languages('c++14')
+set_warnings('none')   -- TODO: Use 'all', 'extra'
+set_languages('c++14') -- TODO: C++23
 
-add_defines('_LARGE_WORLDS', '_DEBUG_MENUS_ENABLED')
+if is_config('debug-menu', true) then
+    add_defines('MINECRAFT_DEBUG_MENU')
+end
+
+if is_config('large-world', true) then
+    add_defines('MINECRAFT_LARGE_WORLD')
+end
 
 if is_mode('debug') then
     -- never defines _DEBUG; we do not use the debug CRT (under Windows).
@@ -17,9 +38,11 @@ if is_mode('debug') then
 end
 
 if is_plat('windows') then
-    add_defines('_CRT_NON_CONFORMING_SWPRINTFS', '_CRT_SECURE_NO_WARNINGS')
+    add_defines('_CRT_SECURE_NO_WARNINGS', '_CRT_NON_CONFORMING_SWPRINTFS')
     add_defines('_WINDOWS64')
 end
+
+-- targets
 
 target('client')
     set_kind('binary')

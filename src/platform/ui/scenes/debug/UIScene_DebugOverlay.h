@@ -13,7 +13,7 @@
 #include "util/java/Class.h"
 
 class UILayer;
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #include "platform/ui/UIScene.h"
 #include "platform/ui/controls/UIControl_ButtonList.h"
 

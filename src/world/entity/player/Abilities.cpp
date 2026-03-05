@@ -11,7 +11,7 @@ Abilities::Abilities() {
     flyingSpeed  = 0.05f;
     walkingSpeed = 0.1f;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     debugflying = false;
 #endif
 }

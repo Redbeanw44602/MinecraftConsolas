@@ -32,7 +32,7 @@ private:
     std::vector<LevelChunk*> m_loadedChunkList;
     ServerLevel*             level;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     std::deque<LevelChunk*> m_toDrop;
     LevelChunk**            m_unloadedCache;
 #endif
@@ -57,13 +57,13 @@ public:
     virtual LevelChunk*       create(int x, int z);
     LevelChunk*         create(int x, int z, bool asyncPostProcess); // 4J added
     virtual LevelChunk* getChunk(int x, int z);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     LevelChunk* getChunkLoadedOrUnloaded(int x, int z); // 4J added
 #endif
     virtual LevelChunk** getCache() { return cache; } // 4J added
 
     // 4J-JEV Added; Remove chunk from the toDrop queue.
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     void dontDrop(int x, int z);
 #endif
 
@@ -87,7 +87,7 @@ public:
 
 
 private:
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int MAX_SAVES = 20;
 #else
     // 4J Stu - Was 24, but lowering it drastically so that we can trickle save

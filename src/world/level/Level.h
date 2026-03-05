@@ -325,7 +325,7 @@ public:
         int                 brightness
     ); // 4J added
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     typedef std::uint64_t lightCache_t;
 #else
     typedef unsigned int lightCache_t;
@@ -367,7 +367,7 @@ public:
     static const int LIGHTING_SHIFT = 24;
     static const int BLOCKING_SHIFT = 20;
     static const int EMISSION_SHIFT = 16;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const std::int64_t LIGHTING_WRITEBACK = 0x80000000LL;
     static const std::int64_t EMISSION_VALID     = 0x40000000LL;
     static const std::int64_t BLOCKING_VALID     = 0x20000000LL;

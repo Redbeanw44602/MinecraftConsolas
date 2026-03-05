@@ -207,7 +207,7 @@ void Minimap::render(
 
     auto itEnd = data->decorations.end();
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     std::vector<MapItemSavedData::MapDecoration*> m_edgeIcons;
 #endif
 
@@ -223,7 +223,7 @@ void Minimap::render(
 
         char imgIndex = dec->img;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         // For edge icons, use a different texture
         if (imgIndex >= 16) {
             m_edgeIcons.push_back(dec);
@@ -286,7 +286,7 @@ void Minimap::render(
         fIconZ -= 0.01f;
     }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     // For players on the edge of the world
     textures->bind(textures->loadTexture(TN_MISC_ADDITIONALMAPICONS));
 

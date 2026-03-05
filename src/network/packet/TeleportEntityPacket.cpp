@@ -44,7 +44,7 @@ TeleportEntityPacket::TeleportEntityPacket(
 void TeleportEntityPacket::read(DataInputStream* dis) // throws IOException
 {
     id = dis->readShort();
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     x = dis->readInt();
     y = dis->readInt();
     z = dis->readInt();
@@ -60,7 +60,7 @@ void TeleportEntityPacket::read(DataInputStream* dis) // throws IOException
 void TeleportEntityPacket::write(DataOutputStream* dos) // throws IOException
 {
     dos->writeShort(id);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeInt(x);
     dos->writeInt(y);
     dos->writeInt(z);

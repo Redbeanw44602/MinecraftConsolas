@@ -25,7 +25,7 @@ TileUpdatePacket::TileUpdatePacket(int x, int y, int z, Level* level) {
 
 void TileUpdatePacket::read(DataInputStream* dis) // throws IOException
 {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     x = dis->readInt();
     y = dis->read();
     z = dis->readInt();
@@ -54,7 +54,7 @@ void TileUpdatePacket::read(DataInputStream* dis) // throws IOException
 
 void TileUpdatePacket::write(DataOutputStream* dos) // throws IOException
 {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeInt(x);
     dos->write(y);
     dos->writeInt(z);
@@ -83,7 +83,7 @@ void TileUpdatePacket::handle(PacketListener* listener) {
 }
 
 int TileUpdatePacket::getEstimatedSize() {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     return 12;
 #else
     return 5;

@@ -23,7 +23,7 @@
 
 class Player;
 class UILayer;
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #include "client/Minecraft.h"
 #include "client/multiplayer/ClientConnection.h"
 #include "client/multiplayer/MultiPlayerLevel.h"

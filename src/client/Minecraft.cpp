@@ -3729,7 +3729,7 @@ void Minecraft::tick(bool bFirst, bool bUpdateTextures) {
 
         if (player->missTime > 0) player->missTime--;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
         if (app.DebugSettingsOn()) {
 #ifndef __PSVITA__
             // 4J-PB - debugoverlay for primary player only
@@ -4832,7 +4832,7 @@ void Minecraft::main() {
     ColourTable::staticCtor();
     app.loadDefaultGameRules();
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     LevelRenderer::staticCtor();
 #endif
 

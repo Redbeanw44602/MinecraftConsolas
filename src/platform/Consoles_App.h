@@ -470,7 +470,7 @@ public:
     );
 #endif
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     bool DebugSettingsOn() { return m_bDebugOptions; }
 #else
     bool DebugSettingsOn() { return false; }

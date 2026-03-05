@@ -42,7 +42,7 @@ ServerChunkCache::ServerChunkCache(
     this->cache = new LevelChunk*[XZSIZE * XZSIZE];
     memset(this->cache, 0, XZSIZE * XZSIZE * sizeof(LevelChunk*));
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_unloadedCache = new LevelChunk*[XZSIZE * XZSIZE];
     memset(m_unloadedCache, 0, XZSIZE * XZSIZE * sizeof(LevelChunk*));
 #endif
@@ -56,7 +56,7 @@ ServerChunkCache::~ServerChunkCache() {
     delete cache;
     delete source;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     for (unsigned int i = 0; i < XZSIZE * XZSIZE; ++i) {
         delete m_unloadedCache[i];
     }
@@ -91,7 +91,7 @@ std::vector<LevelChunk*>* ServerChunkCache::getLoadedChunkList() {
 void ServerChunkCache::drop(int x, int z) {
     // 4J - we're not dropping things anymore now that we have a fixed sized
     // cache
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 
     bool canDrop = false;
     //	if (level->dimension->mayRespawn())
@@ -125,7 +125,7 @@ void ServerChunkCache::drop(int x, int z) {
 }
 
 void ServerChunkCache::dropAll() {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     for (LevelChunk* chunk : m_loadedChunkList) {
         drop(chunk->x, chunk->z);
     }
@@ -325,7 +325,7 @@ LevelChunk* ServerChunkCache::getChunk(int x, int z) {
     return emptyChunk;
 }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 // 4J added - this special variation on getChunk also checks the unloaded chunk
 // cache. It is called on a host machine from the client-side level when: (1)
 // Trying to determine whether the client blocks and data are the same as those
@@ -360,7 +360,7 @@ LevelChunk* ServerChunkCache::getChunkLoadedOrUnloaded(int x, int z) {
 #endif
 
 // 4J Added //
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 void ServerChunkCache::dontDrop(int x, int z) {
     LevelChunk* chunk = getChunk(x, z);
     m_toDrop.erase(
@@ -375,7 +375,7 @@ LevelChunk* ServerChunkCache::load(int x, int z) {
 
     LevelChunk* levelChunk = NULL;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     int ix               = x + XZOFFSET;
     int iz               = z + XZOFFSET;
     int idx              = ix * XZSIZE + iz;
@@ -771,7 +771,7 @@ bool ServerChunkCache::save(bool force, ProgressListener* progressListener) {
             }
         }
     } else {
-#if 1 //_LARGE_WORLDS
+#if 1 //MINECRAFT_LARGE_WORLD
       // 4J Stu - We have multiple for threads for all saving as part of the
       // storage, so use that rather than new threads here
 
@@ -1050,7 +1050,7 @@ bool ServerChunkCache::save(bool force, ProgressListener* progressListener) {
 
 bool ServerChunkCache::tick() {
     if (!level->noSave) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         for (int i = 0; i < 100; i++) {
             if (!m_toDrop.empty()) {
                 LevelChunk* chunk = m_toDrop.front();

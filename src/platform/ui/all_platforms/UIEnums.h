@@ -124,7 +124,7 @@ enum EUIScene {
     eUIScene_InGameSaveManagementMenu,
 #endif // ndef _XBOX
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     eUIScene_DebugOverlay,
     eUIScene_DebugItemEditor,
 #endif

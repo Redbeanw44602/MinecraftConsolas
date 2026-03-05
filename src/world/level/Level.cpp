@@ -125,7 +125,7 @@ void inline Level::setBrightnessCached(
     int          idx = ((x & 15) << 8) | ((y & 15) << 4) | (z & 15);
     lightCache_t posbits =
         ((x & 0x3f0) << 6) | ((y & 0x0f0) << 2) | ((z & 0x3f0) >> 4);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     // Add in the higher bits for x and z
     posbits |= ((((std::uint64_t)x) & 0x3FFFC00L) << 38)
              | ((((std::uint64_t)z) & 0x3FFFC00L) << 22);
@@ -140,7 +140,7 @@ void inline Level::setBrightnessCached(
             // Then we need to flush
             int val = (cacheValue >> LIGHTING_SHIFT) & 15;
             int xx  = ((cacheValue >> 6) & 0x3f0) | (x & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             xx |= ((cacheValue >> 38) & 0x3FFFC00);
             xx  = (xx << 6) >> 6; // sign extend
 #else
@@ -148,7 +148,7 @@ void inline Level::setBrightnessCached(
 #endif
             int yy = ((cacheValue >> 2) & 0x0f0) | (y & 15);
             int zz = ((cacheValue << 4) & 0x3f0) | (z & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             zz |= ((cacheValue >> 22) & 0x3FFFC00);
             zz  = (zz << 6) >> 6; // sign extend
 #else
@@ -193,7 +193,7 @@ inline int Level::getBrightnessCached(
     int          idx = ((x & 15) << 8) | ((y & 15) << 4) | (z & 15);
     lightCache_t posbits =
         ((x & 0x3f0) << 6) | ((y & 0x0f0) << 2) | ((z & 0x3f0) >> 4);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     // Add in the higher bits for x and z
     posbits |= ((((std::uint64_t)x) & 0x3FFFC00L) << 38)
              | ((((std::uint64_t)z) & 0x3FFFC00L) << 22);
@@ -207,7 +207,7 @@ inline int Level::getBrightnessCached(
             // Then we need to flush
             int val = (cacheValue >> LIGHTING_SHIFT) & 15;
             int xx  = ((cacheValue >> 6) & 0x3f0) | (x & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             xx |= ((cacheValue >> 38) & 0x3FFFC00);
             xx  = (xx << 6) >> 6; // sign extend
 #else
@@ -215,7 +215,7 @@ inline int Level::getBrightnessCached(
 #endif
             int yy = ((cacheValue >> 2) & 0x0f0) | (y & 15);
             int zz = ((cacheValue << 4) & 0x3f0) | (z & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             zz |= ((cacheValue >> 22) & 0x3FFFC00);
             zz  = (zz << 6) >> 6; // sign extend
 #else
@@ -252,7 +252,7 @@ Level::getEmissionCached(lightCache_t* cache, int ct, int x, int y, int z) {
     int          idx = ((x & 15) << 8) | ((y & 15) << 4) | (z & 15);
     lightCache_t posbits =
         ((x & 0x3f0) << 6) | ((y & 0x0f0) << 2) | ((z & 0x3f0) >> 4);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     // Add in the higher bits for x and z
     posbits |= ((((std::uint64_t)x) & 0x3FFFC00) << 38)
              | ((((std::uint64_t)z) & 0x3FFFC00) << 22);
@@ -266,7 +266,7 @@ Level::getEmissionCached(lightCache_t* cache, int ct, int x, int y, int z) {
             // Then we need to flush
             int val = (cacheValue >> LIGHTING_SHIFT) & 15;
             int xx  = ((cacheValue >> 6) & 0x3f0) | (x & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             xx |= ((cacheValue >> 38) & 0x3FFFC00);
             xx  = (xx << 6) >> 6; // sign extend
 #else
@@ -274,7 +274,7 @@ Level::getEmissionCached(lightCache_t* cache, int ct, int x, int y, int z) {
 #endif
             int yy = ((cacheValue >> 2) & 0x0f0) | (y & 15);
             int zz = ((cacheValue << 4) & 0x3f0) | (z & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             zz |= ((cacheValue >> 22) & 0x3FFFC00);
             zz  = (zz << 6) >> 6; // sign extend
 #else
@@ -325,7 +325,7 @@ inline int Level::getBlockingCached(
     int          idx = ((x & 15) << 8) | ((y & 15) << 4) | (z & 15);
     lightCache_t posbits =
         ((x & 0x3f0) << 6) | ((y & 0x0f0) << 2) | ((z & 0x3f0) >> 4);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     // Add in the higher bits for x and z
     posbits |= ((((std::uint64_t)x) & 0x3FFFC00L) << 38)
              | ((((std::uint64_t)z) & 0x3FFFC00L) << 22);
@@ -339,7 +339,7 @@ inline int Level::getBlockingCached(
             // Then we need to flush
             int val = (cacheValue >> LIGHTING_SHIFT) & 15;
             int xx  = ((cacheValue >> 6) & 0x3f0) | (x & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             xx |= ((cacheValue >> 38) & 0x3FFFC00);
             xx  = (xx << 6) >> 6; // sign extend
 #else
@@ -347,7 +347,7 @@ inline int Level::getBlockingCached(
 #endif
             int yy = ((cacheValue >> 2) & 0x0f0) | (y & 15);
             int zz = ((cacheValue << 4) & 0x3f0) | (z & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             zz |= ((cacheValue >> 22) & 0x3FFFC00);
             zz  = (zz << 6) >> 6; // sign extend
 #else
@@ -418,7 +418,7 @@ void Level::flushCache(
                     if (cacheValue & LIGHTING_WRITEBACK) {
                         int val = (cacheValue >> LIGHTING_SHIFT) & 15;
                         int xx  = ((cacheValue >> 6) & 0x3f0) | (x & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                         xx |= ((cacheValue >> 38) & 0x3FFFC00);
                         xx  = (xx << 6) >> 6; // sign extend
 #else
@@ -426,7 +426,7 @@ void Level::flushCache(
 #endif
                         int yy = ((cacheValue >> 2) & 0x0f0) | (y & 15);
                         int zz = ((cacheValue << 4) & 0x3f0) | (z & 15);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                         zz |= ((cacheValue >> 22) & 0x3FFFC00);
                         zz  = (zz << 6) >> 6; // sign extend
 #else
@@ -2267,7 +2267,7 @@ void Level::tickEntities() {
             *it; // tilevector<std::shared_ptr<Entity> >.at(i);
         if (!te->isRemoved() && te->hasLevel()) {
             if (hasChunkAt(te->x, te->y, te->z)) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                 LevelChunk* lc = getChunk(te->x >> 4, te->z >> 4);
                 if (!isClientSide || !lc->isUnloaded())
 #endif

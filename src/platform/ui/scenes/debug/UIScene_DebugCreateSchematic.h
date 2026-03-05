@@ -13,7 +13,7 @@
 #include "platform/ui/controls/UIControl_TextInput.h"
 
 class UILayer;
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #include "platform/gamerules/levelgeneration/ConsoleSchematicFile.h"
 #include "platform/ui/UIScene.h"
 

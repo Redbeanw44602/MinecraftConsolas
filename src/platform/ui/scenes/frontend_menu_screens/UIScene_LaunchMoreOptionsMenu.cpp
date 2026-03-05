@@ -21,7 +21,7 @@
 #define GAME_CREATE_ONLINE_TIMER_ID   0
 #define GAME_CREATE_ONLINE_TIMER_TIME 100
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 int m_iWorldSizeTitleA[4] = {
     IDS_WORLD_SIZE_TITLE_CLASSIC,
     IDS_WORLD_SIZE_TITLE_SMALL,
@@ -145,7 +145,7 @@ UIScene_LaunchMoreOptionsMenu::UIScene_LaunchMoreOptionsMenu(
     );
 
     if (m_loadedResolution == eSceneResolution_1080) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         m_labelGameOptions.init(app.GetString(IDS_GAME_OPTIONS));
         m_labelSeed.init(app.GetString(IDS_CREATE_NEW_WORLD_SEED));
         m_labelRandomSeed.init(app.GetString(IDS_CREATE_NEW_WORLD_RANDOM_SEED));
@@ -174,7 +174,7 @@ UIScene_LaunchMoreOptionsMenu::UIScene_LaunchMoreOptionsMenu(
     // &m_checkboxes[eLaunchCheckbox_ResetNether], false ); #endif
 
     // set the default text
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     std::wstring wsText = L"";
     if (m_params->bGenerateOptions) {
         wsText = app.GetString(IDS_GAMEOPTION_SEED);
@@ -211,7 +211,7 @@ UIScene_LaunchMoreOptionsMenu::UIScene_LaunchMoreOptionsMenu(
 void UIScene_LaunchMoreOptionsMenu::updateTooltips() {
     int changeTabTooltip = -1;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (m_loadedResolution == eSceneResolution_1080
         && m_params->bGenerateOptions) {
         // Set tooltip for change tab (only two tabs)
@@ -242,7 +242,7 @@ void UIScene_LaunchMoreOptionsMenu::updateTooltips() {
 
 void UIScene_LaunchMoreOptionsMenu::updateComponents() {
     m_parentLayer->showComponent(m_iPad, eUIComponent_Panorama, true);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_parentLayer->showComponent(m_iPad, eUIComponent_Logo, true);
 #else
     m_parentLayer->showComponent(m_iPad, eUIComponent_Logo, false);
@@ -456,7 +456,7 @@ void UIScene_LaunchMoreOptionsMenu::handleFocusChange(
     case eLaunchCheckbox_BonusChest:
         stringId = IDS_GAMEOPTION_BONUS_CHEST;
         break;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     case eControl_EditSeed:
         stringId = IDS_GAMEOPTION_SEED;
         break;
@@ -589,7 +589,7 @@ void UIScene_LaunchMoreOptionsMenu::handleSliderMove(
     int value = (int)currentValue;
     switch ((int)sliderId) {
     case eControl_WorldSize:
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         m_sliderWorldSize.handleSliderMove(value);
         m_params->worldSize = value;
         m_sliderWorldSize.setLabel(app.GetString(m_iWorldSizeTitleA[value]));

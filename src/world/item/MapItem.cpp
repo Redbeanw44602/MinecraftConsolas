@@ -83,7 +83,7 @@ std::shared_ptr<MapItemSavedData> MapItem::getSavedData(
     }
 
     mapItemSavedData->scale = 3;
-#ifndef _LARGE_WORLDS
+#ifndef MINECRAFT_LARGE_WORLD
     // 4J-PB - for Xbox maps, we'll centre them on the origin of the world,
     // since we can fit the whole world in our map
     mapItemSavedData->x = 0;
@@ -91,7 +91,7 @@ std::shared_ptr<MapItemSavedData> MapItem::getSavedData(
 #endif
 
     if (newData) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         int scale =
             MapItemSavedData::MAP_SIZE * 2 * (1 << mapItemSavedData->scale);
         mapItemSavedData->x =
@@ -330,7 +330,7 @@ void MapItem::onCraftedBy(
     wchar_t buf[64];
 
     int mapScale = 3;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     int scale    = MapItemSavedData::MAP_SIZE * 2 * (1 << mapScale);
     int centreXC = (int)(Math::round(player->x / scale) * scale);
     int centreZC = (int)(Math::round(player->z / scale) * scale);

@@ -219,7 +219,7 @@ ServerLevel::ServerLevel(
     emptyTime                   = 0;
     activeTileEventsList        = 0;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     saveInterval = 3;
 #else
     saveInterval = 20 * 2;
@@ -318,7 +318,7 @@ void ServerLevel::tick() {
     std::int64_t time = levelData->getTime() + 1;
 // 4J Stu - Putting this back in, but I have reduced the number of chunks that
 // save when not forced
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (time % (saveInterval) == (dimension->id + 1))
 #else
     if (time % (saveInterval)
@@ -987,7 +987,7 @@ void ServerLevel::save(
     {
         chunkSource->save(force, progressListener);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         // 4J Stu - Only do this if there are players in the level
         if (chunkMap->players.size() > 0) {
             // 4J Stu - This will come in a later change anyway

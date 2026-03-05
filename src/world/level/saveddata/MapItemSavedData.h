@@ -18,7 +18,7 @@ public:
     static const int MAP_SIZE  = 64;
     static const int MAX_SCALE = 4;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     static const int DEC_PACKET_BYTES = 8;
 #else
     static const int DEC_PACKET_BYTES = 7;

@@ -67,7 +67,7 @@ bool NetherBridgeFeature::isFeatureChunk(int x, int z, bool bIsSuperflat) {
         || (x == netherFortressPos->x && z == netherFortressPos->z))
         return true;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     int xzSize = level->dimension->getXZSize();
     if (xzSize > 30) {
         // For large worlds, lets allow the PC version of the spawning to place

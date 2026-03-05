@@ -13,7 +13,7 @@ class TilePos;
 
 // 4J Stu Added
 // We can get away with a few more attempts on new-gen consoles
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 #define MAX_STRONGHOLD_ATTEMPTS 30
 #else
 #define MAX_STRONGHOLD_ATTEMPTS 10

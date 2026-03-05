@@ -195,7 +195,7 @@ public:
     std::int64_t lastSaveTime;
     bool         seenByPlayer;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     bool         m_bUnloaded;
     CompoundTag* m_unloadedEntitiesTag;
 #endif
@@ -276,7 +276,7 @@ public:
     virtual void removeTileEntity(int x, int y, int z);
     virtual void load();
     virtual void unload(bool unloadTileEntities); // 4J - added parameter
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     virtual bool isUnloaded();
 #endif
     virtual void markUnsaved();

@@ -75,7 +75,7 @@ void AddMobPacket::read(DataInputStream* dis) // throws IOException
 {
     id   = dis->readShort();
     type = dis->readByte() & 0xff;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     x = dis->readInt();
     y = dis->readInt();
     z = dis->readInt();
@@ -99,7 +99,7 @@ void AddMobPacket::write(DataOutputStream* dos) // throws IOException
 {
     dos->writeShort(id);
     dos->writeByte(type & 0xff);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeInt(x);
     dos->writeInt(y);
     dos->writeInt(z);

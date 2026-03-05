@@ -168,7 +168,7 @@ void UIScene_InGameInfoMenu::updateTooltips() {
                 (cheats && (m_isHostPlayer || !editingHost))
                 || (!trust && (m_isHostPlayer || !editingHost))
 #if (!defined(_CONTENT_PACKAGE) && !defined(_FINAL_BUILD)                      \
-     && defined(_DEBUG_MENUS_ENABLED))
+     && defined(MINECRAFT_DEBUG_MENU))
                 || (m_isHostPlayer && editingHost)
 #endif
             ) {
@@ -476,7 +476,7 @@ void UIScene_InGameInfoMenu::handlePress(F64 controlId, F64 childId) {
                 (cheats && (m_isHostPlayer || !editingHost))
                 || (!trust && (m_isHostPlayer || !editingHost))
 #if (!defined(_CONTENT_PACKAGE) && !defined(_FINAL_BUILD)                      \
-     && defined(_DEBUG_MENUS_ENABLED))
+     && defined(MINECRAFT_DEBUG_MENU))
                 || (m_isHostPlayer && editingHost)
 #endif
             ) {

@@ -242,7 +242,7 @@ private:
     static std::wstring       m_wstrStageText;
     LoadMenuInitData*         m_loadMenuInitData;
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     static C4JStorage::SAVETRANSFER_FILE_DETAILS m_debugTransferDetails;
 #endif
 

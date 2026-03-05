@@ -78,7 +78,7 @@ charArray MapItemSavedData::HoldingPlayer::nextUpdatePacket(
         data[0] = 1;
         for (unsigned int i = 0; i < parent->decorations.size(); i++) {
             MapDecoration* md = parent->decorations.at(i);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             data[i * DEC_PACKET_BYTES + 1] = (char)(md->img);
             data[i * DEC_PACKET_BYTES + 8] = (char)(md->rot & 0xF);
 #else
@@ -98,7 +98,7 @@ charArray MapItemSavedData::HoldingPlayer::nextUpdatePacket(
              it != parent->nonPlayerDecorations.end();
              ++it) {
             MapDecoration* md = it->second;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             data[dataIndex * DEC_PACKET_BYTES + 1] = (char)(md->img);
             data[dataIndex * DEC_PACKET_BYTES + 8] = (char)(md->rot & 0xF);
 #else
@@ -314,7 +314,7 @@ void MapItemSavedData::tickCarriedBy(
                     char  x    = (char)(xd * 2 + 0.5);
                     char  y    = (char)(yd * 2 + 0.5);
                     int   size = MAP_SIZE - 1;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                     if (xd < -size || yd < -size || xd > size || yd > size) {
                         if (xd <= -size) x = (byte)(size * 2 + 2.5);
                         if (yd <= -size) y = (byte)(size * 2 + 2.5);
@@ -362,7 +362,7 @@ void MapItemSavedData::tickCarriedBy(
                         int s = step / 10;
                         rot   = (char)((s * s * 34187121 + s * 121) >> 15 & 15);
                     }
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                     if (xd < -size || yd < -size || xd > size || yd > size) {
                         if (xd <= -size) x = (byte)(size * 2 + 2.5);
                         if (yd <= -size) y = (byte)(size * 2 + 2.5);
@@ -407,7 +407,7 @@ void MapItemSavedData::tickCarriedBy(
 					int s = step / 10;
 					rot = (char) ((s * s * 34187121 + s * 121) >> 15 & 15);
 				}
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 				if (xd < -size || yd < -size || xd > size || yd > size)
 				{
 
@@ -445,7 +445,7 @@ void MapItemSavedData::tickCarriedBy(
                         char rot;
                         char imgIndex;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                         if (xd > -size && yd > -size && xd <= size
                             && yd <= size)
 #endif
@@ -464,7 +464,7 @@ void MapItemSavedData::tickCarriedBy(
                             imgIndex = (int)decorationPlayer->getPlayerIndex();
                             if (imgIndex > 3) imgIndex += 4;
                         }
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                         else // if (abs(xd) < MAP_SIZE * 5 && abs(yd) < MAP_SIZE
                              // * 5)
                         {
@@ -567,7 +567,7 @@ void MapItemSavedData::handleComplexItemData(charArray& data) {
         decorations.clear();
         for (unsigned int i = 0; i < (data.length - 1) / DEC_PACKET_BYTES;
              i++) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
             char img = data[i * DEC_PACKET_BYTES + 1];
             char rot = data[i * DEC_PACKET_BYTES + 8];
 #else

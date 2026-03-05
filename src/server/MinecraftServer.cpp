@@ -214,7 +214,7 @@ bool MinecraftServer::initServer(
     setFlightAllowed(true); // settings->getBoolean(L"allow-flight", false);
 
     // 4J Stu - Enabling flight to stop it kicking us when we use it
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     setFlightAllowed(true);
 #endif
 

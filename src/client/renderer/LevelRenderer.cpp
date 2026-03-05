@@ -119,7 +119,7 @@ static LevelRenderer_FindNearestChunk_DataIn g_findNearestChunkDataIn
 
 const unsigned int HALO_RING_RADIUS = 100;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 Chunk                  LevelRenderer::permaChunk[MAX_CONCURRENT_CHUNK_REBUILDS];
 C4JThread*             LevelRenderer::rebuildThreads[MAX_CHUNK_REBUILD_THREADS];
 C4JThread::EventArray* LevelRenderer::s_rebuildCompleteEvents;
@@ -203,7 +203,7 @@ LevelRenderer::LevelRenderer(Minecraft* mc, Textures* textures) {
 
     InitializeCriticalSection(&m_csDirtyChunks);
     InitializeCriticalSection(&m_csRenderableTileEntities);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     InitializeCriticalSection(&m_csChunkFlags);
 #endif
 
@@ -2118,7 +2118,7 @@ void LevelRenderer::renderAdvancedClouds(float alpha) {
 
 
 bool LevelRenderer::updateDirtyChunks() {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     std::list<std::pair<ClipChunk*, int>> nearestClipChunks;
 #endif
 
@@ -2245,7 +2245,7 @@ bool LevelRenderer::updateDirtyChunks() {
         veryNearCount = g_findNearestChunkDataIn.veryNearCount;
 #else // __PS3__
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         int maxNearestChunks = MAX_CONCURRENT_CHUNK_REBUILDS;
         // 4J Stu - On XboxOne we should cut this down if in a constrained state
         // so the saving threads get more time
@@ -2304,7 +2304,7 @@ bool LevelRenderer::updateDirtyChunks() {
                             {
                                 considered++;
                                 // Is this chunk nearer than our nearest?
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                                 bool isNearer  = nearestClipChunks.empty();
                                 auto itNearest = nearestClipChunks.begin();
                                 for (; itNearest != nearestClipChunks.end();
@@ -2359,7 +2359,7 @@ bool LevelRenderer::updateDirtyChunks() {
                                     if (!lc->isRenderChunkEmpty(y * 16)) {
                                         nearChunk = pClipChunk;
                                         minDistSq = distSqWeighted;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
                                         nearestClipChunks.insert(
                                             itNearest,
                                             std::pair<ClipChunk*, int>(
@@ -2407,7 +2407,7 @@ bool LevelRenderer::updateDirtyChunks() {
 
 
     Chunk* chunk = NULL;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (!nearestClipChunks.empty()) {
         int index = 0;
         for (auto it = nearestClipChunks.begin(); it != nearestClipChunks.end();
@@ -4174,11 +4174,11 @@ void LevelRenderer::setGlobalChunkFlags(
 ) {
     int index = getGlobalIndexForChunk(x, y, z, level);
     if (index != -1) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         EnterCriticalSection(&m_csChunkFlags);
 #endif
         globalChunkFlags[index] = flags;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         LeaveCriticalSection(&m_csChunkFlags);
 #endif
     }
@@ -4192,11 +4192,11 @@ void LevelRenderer::setGlobalChunkFlag(
     unsigned char sflag = flag << shift;
 
     if (index != -1) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         EnterCriticalSection(&m_csChunkFlags);
 #endif
         globalChunkFlags[index] |= sflag;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         LeaveCriticalSection(&m_csChunkFlags);
 #endif
     }
@@ -4213,11 +4213,11 @@ void LevelRenderer::setGlobalChunkFlag(
     unsigned char sflag = flag << shift;
     int           index = getGlobalIndexForChunk(x, y, z, level);
     if (index != -1) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         EnterCriticalSection(&m_csChunkFlags);
 #endif
         globalChunkFlags[index] |= sflag;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         LeaveCriticalSection(&m_csChunkFlags);
 #endif
     }
@@ -4234,11 +4234,11 @@ void LevelRenderer::clearGlobalChunkFlag(
     unsigned char sflag = flag << shift;
     int           index = getGlobalIndexForChunk(x, y, z, level);
     if (index != -1) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         EnterCriticalSection(&m_csChunkFlags);
 #endif
         globalChunkFlags[index] &= ~sflag;
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         LeaveCriticalSection(&m_csChunkFlags);
 #endif
     }
@@ -4497,7 +4497,7 @@ void LevelRenderer::DestroyedTileManager::tick() {
     LeaveCriticalSection(&m_csDestroyedTiles);
 }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 void LevelRenderer::staticCtor() {
     s_rebuildCompleteEvents =
         new C4JThread::EventArray(MAX_CHUNK_REBUILD_THREADS);

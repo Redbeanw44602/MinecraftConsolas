@@ -1478,7 +1478,7 @@ void UIScene_CreateWorldMenu::CreateGame(
 
     param->settings = app.GetGameHostOption(eGameHostOption_All);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     switch (pClass->m_MoreOptionsParams.worldSize) {
     case 0:
         // Classic

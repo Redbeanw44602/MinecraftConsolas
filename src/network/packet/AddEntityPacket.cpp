@@ -80,7 +80,7 @@ void AddEntityPacket::read(
 {
     id   = dis->readShort();
     type = dis->readByte();
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     x = dis->readInt();
     y = dis->readInt();
     z = dis->readInt();
@@ -107,7 +107,7 @@ void AddEntityPacket::write(
 {
     dos->writeShort(id);
     dos->writeByte(type);
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     dos->writeInt(x);
     dos->writeInt(y);
     dos->writeInt(z);

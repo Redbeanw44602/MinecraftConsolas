@@ -64,7 +64,7 @@ unsigned long UIScene_LoadOrJoinMenu::s_ulFileSize    = 0L;
 byteArray     UIScene_LoadOrJoinMenu::s_transferData  = byteArray();
 std::wstring  UIScene_LoadOrJoinMenu::m_wstrStageText = L"";
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 C4JStorage::SAVETRANSFER_FILE_DETAILS
     UIScene_LoadOrJoinMenu::m_debugTransferDetails;
 #endif
@@ -3770,7 +3770,7 @@ void UIScene_LoadOrJoinMenu::RequestFileSize(
         IDS_SAVETRANSFER_STAGE_GET_DETAILS
     );
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     if (app.GetLoadSavesFromFolderEnabled()) {
         ZeroMemory(
             &m_debugTransferDetails,
@@ -3825,7 +3825,7 @@ void UIScene_LoadOrJoinMenu::RequestFileData(
 
     pMinecraft->progressRenderer->progressStage(m_wstrStageText);
 
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
     if (app.GetLoadSavesFromFolderEnabled()) {
         File targetFile(std::wstring(L"FakeTMSPP\\").append(filename));
         if (targetFile.exists()) {

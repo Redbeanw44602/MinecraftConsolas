@@ -15,7 +15,7 @@
 #include "world/level/chunk/ChunkSource.h"
 
 class UILayer;
-#ifdef _DEBUG_MENUS_ENABLED
+#ifdef MINECRAFT_DEBUG_MENU
 #include "util/console/StringHelpers.h"
 
 #include "UIScene_DebugCreateSchematic.h"

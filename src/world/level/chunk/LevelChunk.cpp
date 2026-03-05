@@ -144,7 +144,7 @@ void LevelChunk::init(Level* level, int x, int z) {
     // the the initialisation block array.
     emissiveAdded = true;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     m_bUnloaded           = false; // 4J Added
     m_unloadedEntitiesTag = NULL;
 #endif
@@ -268,7 +268,7 @@ LevelChunk::LevelChunk(Level* level, int x, int z, LevelChunk* lc)
 
 // 4J Added so we can track unsaved chunks better
 void LevelChunk::setUnsaved(bool unsaved) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (m_unsaved != unsaved) {
         if (unsaved) level->incrementUnsavedChunkCount();
         else level->decrementUnsavedChunkCount();
@@ -355,7 +355,7 @@ void LevelChunk::reSyncLighting() {
         return;
     }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     LevelChunk* lc = MinecraftServer::getInstance()
                          ->getLevel(level->dimension->id)
                          ->cache->getChunkLoadedOrUnloaded(x, z);
@@ -401,7 +401,7 @@ void LevelChunk::startSharingTilesAndData(int forceMs) {
         return;
     }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     LevelChunk* lc = MinecraftServer::getInstance()
                          ->getLevel(level->dimension->id)
                          ->cache->getChunkLoadedOrUnloaded(x, z);
@@ -482,7 +482,7 @@ LevelChunk::~LevelChunk() {
 
     delete[] biomes.data;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     delete m_unloadedEntitiesTag;
 #endif
 }
@@ -1556,7 +1556,7 @@ void LevelChunk::load() {
     loaded = true;
 
     if (!level->isClientSide) {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         if (m_bUnloaded && m_unloadedEntitiesTag) {
             ListTag<CompoundTag>* entityTags =
                 (ListTag<CompoundTag>*)m_unloadedEntitiesTag->getList(
@@ -1615,7 +1615,7 @@ void LevelChunk::load() {
         LeaveCriticalSection(&m_csEntities);
 #endif
     } else {
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
         m_bUnloaded = false;
 #endif
     }
@@ -1648,7 +1648,7 @@ void LevelChunk::unload(bool unloadTileEntities) // 4J - added parameter
 #endif
     // app.DebugPrintf("Unloaded chunk %d, %d\n", x, z);
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (!m_bUnloaded) // 4J-JEV: If we unload a chunk twice, we delete all the
                       // entities/tile-entities its saved in the entitiesTag.
     {
@@ -1709,7 +1709,7 @@ void LevelChunk::unload(bool unloadTileEntities) // 4J - added parameter
 #endif
 }
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 bool LevelChunk::isUnloaded() { return m_bUnloaded; }
 #endif
 

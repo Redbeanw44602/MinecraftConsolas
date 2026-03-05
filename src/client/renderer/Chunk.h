@@ -33,7 +33,7 @@ public:
     static LevelRenderer* levelRenderer;
 
 private:
-#ifndef _LARGE_WORLDS
+#ifndef MINECRAFT_LARGE_WORLD
     static Tesselator* t;
 #else
     static DWORD tlsIdx;

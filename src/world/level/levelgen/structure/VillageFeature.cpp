@@ -33,7 +33,7 @@ VillageFeature::VillageFeature(int villageSizeModifier, int iXZSize)
 bool VillageFeature::isFeatureChunk(int x, int z, bool bIsSuperflat) {
     int townSpacing;
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     if (level->dimension->getXZSize() > 128) {
         townSpacing = 32;
     } else

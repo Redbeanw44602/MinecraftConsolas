@@ -1193,7 +1193,7 @@ int GameRenderer::runUpdate(LPVOID lpParam) {
     Tesselator::CreateNewThreadStorage(1024 * 1024);
     Compression::UseDefaultThreadStorage();
     RenderManager.InitialiseContext();
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     Chunk::CreateNewThreadStorage();
 #endif
     Tile::CreateNewThreadStorage();

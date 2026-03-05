@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
 // 51 maps per player (7x7 overworld, 1 nether, 1 end) * 100 players rounded up
 // to power of 2
 #define MAXIMUM_MAP_SAVE_DATA 8192 // 65536
@@ -81,7 +81,7 @@ private:
 
     static const std::wstring sc_szPlayerDir;
     // 4J Added
-#ifdef _LARGE_WORLDS
+#ifdef MINECRAFT_LARGE_WORLD
     class PlayerMappings {
         friend class DirectoryLevelStorage;
 
