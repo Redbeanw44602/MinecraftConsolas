@@ -2,8 +2,6 @@
 
 #include <cstdint>
 
-#include <windows.h>
-
 #include <4J_Render.h>
 
 #include "client/MemoryTracker.h"

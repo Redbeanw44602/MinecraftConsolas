@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "world/Facing.h"
 #include "world/IconRegister.h"
 #include "world/level/Level.h"

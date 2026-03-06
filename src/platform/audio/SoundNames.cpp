@@ -1,5 +1,3 @@
-#include <windows.h>
-
 #include "world/SoundTypes.h"
 
 #include "Consoles_SoundEngine.h"

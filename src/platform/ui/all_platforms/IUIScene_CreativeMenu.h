@@ -3,8 +3,6 @@
 #include <memory>
 #include <vector>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "world/inventory/AbstractContainerMenu.h"

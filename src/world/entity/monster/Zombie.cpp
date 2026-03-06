@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <memory>
 
-#include <windows.h>
-
 #include "client/renderer/Textures.h"
 #include "nbt/CompoundTag.h"
 #include "stats/GenericStats.h"

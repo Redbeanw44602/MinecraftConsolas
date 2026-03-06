@@ -2,8 +2,6 @@
 #include <cstdint>
 #include <memory>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 #include <4J_Profile.h>
 

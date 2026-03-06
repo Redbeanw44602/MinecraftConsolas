@@ -106,7 +106,7 @@ public:
          int       z1,
          int       offset
      ); // Sets a region of lighting values with the data at offset position in
-        // the array dataIn - external ordering compatible with java DataLayer
+       // the array dataIn - external ordering compatible with java DataLayer
     int getDataRegion(
         byteArray dataInOut,
         int       x0,

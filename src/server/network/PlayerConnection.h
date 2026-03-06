@@ -2,8 +2,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include "network/packet/DisconnectPacket.h"
 #include "network/packet/PacketListener.h"
 #include "server/ConsoleInputSource.h"

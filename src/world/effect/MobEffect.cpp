@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/App_enums.h"
 #include "util/SharedConstants.h"
 #include "win/strings.h"

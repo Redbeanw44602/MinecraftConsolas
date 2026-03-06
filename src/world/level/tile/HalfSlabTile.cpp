@@ -1,7 +1,5 @@
 #include "HalfSlabTile.h"
 
-#include <windows.h>
-
 #include "world/Facing.h"
 #include "world/level/Level.h"
 #include "world/level/LevelSource.h"

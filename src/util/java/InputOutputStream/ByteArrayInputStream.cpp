@@ -8,8 +8,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 #include "win/extraX64.h"
 

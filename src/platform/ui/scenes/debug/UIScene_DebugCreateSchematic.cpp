@@ -1,7 +1,5 @@
 #include <cstdint>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 #include <4J_Profile.h>
 

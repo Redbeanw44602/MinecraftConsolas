@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "util/Mth.h"
 #include "util/java/Random.h"
 #include "world/entity/Mob.h"

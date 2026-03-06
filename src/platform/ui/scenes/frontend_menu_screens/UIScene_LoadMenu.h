@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <4J_Storage.h>
 #include <mss.h>
 #include <rrcore.h>

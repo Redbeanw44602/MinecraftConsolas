@@ -10,8 +10,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Render.h>
 #include <iggy.h>
 #include <mss.h>

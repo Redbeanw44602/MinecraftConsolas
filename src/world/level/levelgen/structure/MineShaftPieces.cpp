@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/MemSect.h"
 #include "util/WeighedTreasure.h"
 #include "util/java/Random.h"

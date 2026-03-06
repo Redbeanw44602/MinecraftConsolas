@@ -6,8 +6,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 #include <4J_Profile.h>
 #include <gdraw_d3d11.h>

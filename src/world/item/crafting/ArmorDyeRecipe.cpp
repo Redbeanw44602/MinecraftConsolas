@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "win/extraX64.h"
 #include "world/entity/animal/Sheep.h"
 #include "world/inventory/CraftingContainer.h"

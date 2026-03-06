@@ -4,8 +4,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include "client/GuiMessage.h"
 #include "win/extraX64.h"
 

@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "stats/GenericStats.h"
 #include "world/Container.h"
 #include "world/entity/player/Inventory.h"

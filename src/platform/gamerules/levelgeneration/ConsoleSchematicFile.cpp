@@ -6,8 +6,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "nbt/DoubleTag.h"
 #include "nbt/IntTag.h"

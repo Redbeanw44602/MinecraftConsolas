@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "util/console/StringHelpers.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"
 #include "win/Windows64_App.h"

@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include <windows.h>
-
 #include "platform/gamerules/ConsoleGameRulesConstants.h"
 
 #include "CompoundGameRuleDefinition.h"

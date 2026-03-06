@@ -3,8 +3,6 @@
 #include <string>
 #include <vector>
 
-#include <windows.h>
-
 #include "client/skins/SkinBox.h"
 
 class Cube;

@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include <windows.h>
-
 #include "world/level/biome/Biome.h"
 #include "world/level/chunk/ChunkSource.h"
 

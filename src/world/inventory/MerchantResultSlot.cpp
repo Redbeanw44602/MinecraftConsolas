@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "world/entity/player/Player.h"
 #include "world/item/ItemInstance.h"
 #include "world/item/trading/Merchant.h"

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "nbt/NbtIo.h"
 #include "util/Compression.h"

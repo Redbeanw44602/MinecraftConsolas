@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "util/Mth.h"
 #include "world/entity/Mob.h"
 #include "world/entity/ai/navigation/PathNavigation.h"

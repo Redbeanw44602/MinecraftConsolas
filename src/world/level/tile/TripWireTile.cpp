@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "world/Direction.h"
 #include "world/entity/player/Player.h"
 #include "world/item/Item.h"

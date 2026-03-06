@@ -6,8 +6,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/model/HumanoidModel.h"
 #include "client/multiplayer/MultiPlayerLevel.h"
 #include "nbt/CompoundTag.h"

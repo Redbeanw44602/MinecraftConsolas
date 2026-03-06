@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "server/MinecraftServer.h"
 #include "util/Compression.h"
 #include "util/ProgressListener.h"
@@ -771,9 +769,9 @@ bool ServerChunkCache::save(bool force, ProgressListener* progressListener) {
             }
         }
     } else {
-#if 1 //MINECRAFT_LARGE_WORLD
-      // 4J Stu - We have multiple for threads for all saving as part of the
-      // storage, so use that rather than new threads here
+#if 1 // MINECRAFT_LARGE_WORLD
+      //  4J Stu - We have multiple for threads for all saving as part of the
+      //  storage, so use that rather than new threads here
 
         // Created a roughly sorted list to match the order that the files were
         // created in 	McRegionChunkStorage::McRegionChunkStorage. This is to

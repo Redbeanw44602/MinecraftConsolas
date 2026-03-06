@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/dlc/DLCGameRulesFile.h"
 #include "platform/dlc/DLCGameRulesHeader.h"
 #include "platform/dlc/DLCLocalisationFile.h"

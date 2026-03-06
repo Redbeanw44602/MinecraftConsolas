@@ -10,8 +10,6 @@
 #include <memory>
 #include <type_traits>
 
-#include <windows.h>
-
 #include "win/extraX64.h"
 #include "world/inventory/CraftingContainer.h"
 #include "world/item/ItemInstance.h"

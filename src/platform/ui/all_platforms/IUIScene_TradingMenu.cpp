@@ -4,8 +4,6 @@
 #include <cstddef>
 #include <type_traits>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "client/multiplayer/ClientConnection.h"
 #include "client/multiplayer/MultiPlayerGameMode.h"

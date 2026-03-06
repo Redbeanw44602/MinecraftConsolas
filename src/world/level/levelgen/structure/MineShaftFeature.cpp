@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "platform/App_enums.h"
 #include "platform/gamerules/levelgeneration/LevelGenerationOptions.h"
 #include "util/java/Random.h"

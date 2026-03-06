@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/console/C4JThread.h"
 #include "win/extraX64.h"
 

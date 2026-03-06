@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <string>
 
-#include <windows.h>
-
 #include <4J_Render.h>
 #include <mss.h>
 

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "client/multiplayer/MultiPlayerLevel.h"
 #include "network/Connection.h"

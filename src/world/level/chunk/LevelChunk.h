@@ -4,8 +4,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 #include "world/level/Level.h"
 #include "world/level/LightLayer.h"

@@ -1,7 +1,5 @@
 #include "TileUpdatePacket.h"
 
-#include <windows.h>
-
 #include "util/java/InputOutputStream/DataInputStream.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"
 #include "world/level/Level.h"

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/network/PlatformNetworkManagerInterface.h"
 #include "util/java/InputOutputStream/DataInputStream.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"

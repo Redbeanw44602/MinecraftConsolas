@@ -12,8 +12,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 #include <4J_Profile.h>
 #include <4J_Render.h>

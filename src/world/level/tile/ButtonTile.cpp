@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "world/Facing.h"
 #include "world/SoundTypes.h"
 #include "world/entity/projectile/Arrow.h"

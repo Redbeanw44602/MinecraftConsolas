@@ -4,8 +4,6 @@
 #include <cstddef>
 #include <cstdint>
 
-#include <windows.h>
-
 #include <mss.h>
 #include <zconf.h>
 

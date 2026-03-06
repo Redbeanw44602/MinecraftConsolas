@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/renderer/Textures.h"
 #include "nbt/CompoundTag.h"
 #include "util/Mth.h"

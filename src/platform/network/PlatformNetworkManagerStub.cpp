@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/java/Socket.h"

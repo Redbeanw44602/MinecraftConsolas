@@ -2,8 +2,6 @@
 
 #include <cstdlib>
 
-#include <windows.h>
-
 #include "platform/gamerules/levelrules/ruledefinitions/GameRuleDefinition.h"
 #include "util/console/StringHelpers.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"

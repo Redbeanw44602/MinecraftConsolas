@@ -2,8 +2,6 @@
 
 #include <string>
 
-#include <windows.h>
-
 #include "platform/ui/all_platforms/UIStructs.h"
 #include "world/SoundTypes.h"
 

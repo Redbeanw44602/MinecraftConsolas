@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "util/java/InputOutputStream/DataInputStream.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"
 #include "world/item/ItemInstance.h"

@@ -3,8 +3,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 #include "util/java/File.h"
 

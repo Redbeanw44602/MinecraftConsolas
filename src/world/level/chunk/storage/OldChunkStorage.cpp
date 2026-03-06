@@ -7,8 +7,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "nbt/ListTag.h"
 #include "nbt/NbtIo.h"

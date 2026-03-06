@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/Console_Debug_enum.h"
 #include "platform/ui/UIScene.h"
 #include "platform/ui/all_platforms/UIEnums.h"

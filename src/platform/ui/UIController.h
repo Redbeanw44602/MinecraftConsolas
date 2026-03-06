@@ -5,7 +5,6 @@
 #include <vector>
 
 #include <d3d11.h>
-#include <windows.h>
 
 #include <4J_Render.h>
 #include <4J_Storage.h>

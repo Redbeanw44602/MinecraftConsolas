@@ -7,8 +7,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "win/Windows64_App.h"
 #include "win/extraX64.h"

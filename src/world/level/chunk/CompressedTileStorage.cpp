@@ -3,8 +3,6 @@
 #include <cassert>
 #include <cstddef>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/console/Definitions.h"

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/renderer/Rect2i.h"
 #include "util/BufferedImage.h"
 #include "util/MemSect.h"

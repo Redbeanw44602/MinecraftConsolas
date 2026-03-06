@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "util/Mth.h"
 #include "win/extraX64.h"

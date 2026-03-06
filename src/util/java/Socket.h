@@ -2,8 +2,6 @@
 
 #include <queue>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/console/ArrayWithLength.h"

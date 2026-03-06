@@ -9,8 +9,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 #include <4J_Storage.h>
 #include <mss.h>

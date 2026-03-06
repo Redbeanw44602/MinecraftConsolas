@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <rrcore.h>
 
 #include "platform/ui/UIScene.h"

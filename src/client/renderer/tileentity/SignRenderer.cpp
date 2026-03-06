@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "client/Minecraft.h"

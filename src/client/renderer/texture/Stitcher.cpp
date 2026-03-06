@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "win/Windows64_App.h"
 
 #include "StitchSlot.h"

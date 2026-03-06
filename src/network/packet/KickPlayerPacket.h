@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include "Packet.h"
 
 class KickPlayerPacket : public Packet,

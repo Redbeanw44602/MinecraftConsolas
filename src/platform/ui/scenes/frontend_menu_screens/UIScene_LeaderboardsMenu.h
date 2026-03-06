@@ -4,8 +4,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Storage.h>
 #include <iggy.h>
 #include <mss.h>

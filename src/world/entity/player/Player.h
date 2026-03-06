@@ -5,8 +5,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "commands/CommandSender.h"

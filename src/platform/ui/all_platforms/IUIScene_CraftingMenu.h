@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include "platform/tutorial/TutorialEnum.h"
 #include "world/item/Item.h"
 #include "world/item/crafting/Recipy.h"

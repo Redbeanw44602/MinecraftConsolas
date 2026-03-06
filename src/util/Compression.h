@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 
 #include "util/console/fileio/FileHeader.h"
 #include "win/extraX64.h"

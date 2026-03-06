@@ -4,8 +4,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Storage.h>
 #include <mss.h>
 #include <rrcore.h>

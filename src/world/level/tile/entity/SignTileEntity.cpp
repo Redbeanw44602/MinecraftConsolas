@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "nbt/CompoundTag.h"
 #include "network/packet/SignUpdatePacket.h"

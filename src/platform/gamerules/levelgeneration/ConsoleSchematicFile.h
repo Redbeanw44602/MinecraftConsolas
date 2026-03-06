@@ -7,8 +7,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/Compression.h"
 #include "util/console/ArrayWithLength.h"
 

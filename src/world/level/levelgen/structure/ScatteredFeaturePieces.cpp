@@ -1,7 +1,5 @@
 #include "ScatteredFeaturePieces.h"
 
-#include <windows.h>
-
 #include "util/WeighedTreasure.h"
 #include "util/console/ArrayWithLength.h"
 #include "util/java/Random.h"

@@ -1,8 +1,6 @@
 #include <cstddef>
 #include <memory>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 
 #include "commands/common/EnchantItemCommand.h"

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 
 #include "client/Minecraft.h"

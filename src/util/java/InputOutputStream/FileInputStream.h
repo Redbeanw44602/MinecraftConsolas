@@ -2,7 +2,6 @@
 
 // 4J Stu - Represents Java standard library class
 
-#include <windows.h>
 
 #include "util/java/File.h"
 

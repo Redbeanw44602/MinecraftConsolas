@@ -2,7 +2,6 @@
 
 // 4J Stu - Represents Java standard lib abstract
 
-#include <windows.h>
 
 #include "util/console/ArrayWithLength.h"
 #include "util/java/File.h"

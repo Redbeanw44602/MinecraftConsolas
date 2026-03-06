@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "platform/App_enums.h"
 #include "platform/ui/UILayer.h"

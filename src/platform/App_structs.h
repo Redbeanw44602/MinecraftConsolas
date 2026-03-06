@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 
 #include <4J_Storage.h>
 

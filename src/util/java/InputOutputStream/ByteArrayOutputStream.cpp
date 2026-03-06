@@ -4,8 +4,6 @@
 #include <cstddef>
 #include <type_traits>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 #include "win/extraX64.h"
 

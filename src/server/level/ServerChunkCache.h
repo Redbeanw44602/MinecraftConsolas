@@ -3,8 +3,6 @@
 #include <deque>
 #include <vector>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/console/C4JThread.h"

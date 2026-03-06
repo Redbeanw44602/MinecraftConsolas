@@ -1,6 +1,5 @@
 #include "IntCache.h"
 
-#include <windows.h>
 
 DWORD IntCache::tlsIdx = TlsAlloc();
 

@@ -5,8 +5,6 @@
 #include <unordered_map>
 #include <vector>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "platform/gamerules/ConsoleGameRulesConstants.h"

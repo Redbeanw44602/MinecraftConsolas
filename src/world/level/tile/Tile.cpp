@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "stats/GenericStats.h"
 #include "stats/Stats.h"
 #include "util/console/ArrayWithLength.h"

@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include <4J_Storage.h>
 
 #include "platform/network/SessionInfo.h"

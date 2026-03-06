@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/MemSect.h"
 #include "util/console/Definitions.h"
 #include "util/java/JavaMath.h"

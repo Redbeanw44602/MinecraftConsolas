@@ -3,8 +3,6 @@
 #include <memory>
 #include <vector>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "util/Mth.h"
 #include "util/java/Random.h"

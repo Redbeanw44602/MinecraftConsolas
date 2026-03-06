@@ -2,8 +2,6 @@
 
 #include <string>
 
-#include <windows.h>
-
 #include <4J_Render.h>
 
 #include "client/renderer/Stubs.h"

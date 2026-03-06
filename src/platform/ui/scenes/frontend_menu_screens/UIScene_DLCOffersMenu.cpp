@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include <4J_Render.h>
 
 #include "platform/App_enums.h"

@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/network/GameNetworkManager.h"
 #include "server/MinecraftServer.h"
 #include "server/level/ServerChunkCache.h"

@@ -3,8 +3,6 @@
 #include <cassert>
 #include <type_traits>
 
-#include <windows.h>
-
 #include "FloatBuffer.h"
 #include "IntBuffer.h"
 

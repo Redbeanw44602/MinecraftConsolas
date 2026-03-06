@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/MemSect.h"
 #include "win/Windows64_App.h"
 

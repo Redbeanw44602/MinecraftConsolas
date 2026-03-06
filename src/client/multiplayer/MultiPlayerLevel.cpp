@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "network/packet/DisconnectPacket.h"
 #include "platform/audio/SoundEngine.h"

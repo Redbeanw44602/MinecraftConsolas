@@ -3,8 +3,6 @@
 #include <cassert>
 #include <memory>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 #include <4J_Storage.h>
 

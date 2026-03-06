@@ -2,8 +2,6 @@
 
 #include <cmath>
 
-#include <windows.h>
-
 #include "stats/GenericStats.h"
 #include "util/java/JavaMath.h"
 #include "world/entity/ExperienceOrb.h"

@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <vector>
 
-#include <windows.h>
-
 #include "win/extraX64.h"
 
 #include "PlatformNetworkManagerInterface.h"

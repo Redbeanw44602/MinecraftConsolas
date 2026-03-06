@@ -3,8 +3,6 @@
 #include <list>
 #include <vector>
 
-#include <windows.h>
-
 #include "StructurePiece.h"
 
 class BoundingBox;

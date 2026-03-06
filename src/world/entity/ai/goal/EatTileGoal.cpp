@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include "util/Mth.h"
 #include "util/java/Random.h"
 #include "world/entity/EntityEvent.h"

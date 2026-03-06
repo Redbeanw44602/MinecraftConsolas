@@ -3,8 +3,6 @@
 #include <memory>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 #include "world/Container.h"
 

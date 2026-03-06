@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <memory>
 
-#include <windows.h>
-
 #include "util/Mth.h"
 #include "util/console/Definitions.h"
 #include "util/java/Random.h"

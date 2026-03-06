@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 #include <4J_Render.h>
 #include <mss.h>

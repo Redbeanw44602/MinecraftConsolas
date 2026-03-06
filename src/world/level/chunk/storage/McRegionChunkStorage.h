@@ -3,8 +3,6 @@
 #include <deque>
 #include <unordered_map>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/console/ArrayWithLength.h"

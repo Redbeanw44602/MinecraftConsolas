@@ -1,7 +1,5 @@
 #include "WoolCarpetTile.h"
 
-#include <windows.h>
-
 #include "util/SharedConstants.h"
 #include "world/level/Level.h"
 #include "world/level/LevelSource.h"

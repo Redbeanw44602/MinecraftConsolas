@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/gamerules/levelgeneration/LevelGenerationOptions.h"
 #include "util/Mth.h"
 #include "util/java/Random.h"

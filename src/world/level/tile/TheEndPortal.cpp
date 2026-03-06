@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "platform/App_enums.h"
 #include "util/java/Random.h"
 #include "win/Windows64_App.h"

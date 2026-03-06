@@ -4,8 +4,6 @@
 #include <cstdio>
 #include <vector>
 
-#include <windows.h>
-
 #include "network/packet/KeepAlivePacket.h"
 #include "network/packet/Packet.h"
 #include "network/packet/PacketListener.h"

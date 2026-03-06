@@ -7,8 +7,6 @@
 #include <unordered_set>
 #include <vector>
 
-#include <windows.h>
-
 #include "util/SharedConstants.h"
 #include "util/console/ArrayWithLength.h"
 #include "util/console/C4JThread.h"

@@ -6,8 +6,6 @@
 #include <unordered_map>
 #include <utility>
 
-#include <windows.h>
-
 #include "client/renderer/Textures.h"
 #include "nbt/CompoundTag.h"
 #include "nbt/ListTag.h"

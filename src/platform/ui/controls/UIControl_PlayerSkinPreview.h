@@ -4,8 +4,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <iggy.h>
 #include <mss.h>
 

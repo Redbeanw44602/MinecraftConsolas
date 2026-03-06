@@ -4,8 +4,6 @@
 #include <cmath>
 #include <cstddef>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "client/multiplayer/MultiPlayerGameMode.h"
 #include "client/multiplayer/MultiPlayerLocalPlayer.h"

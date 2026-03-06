@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 #include <mss.h>
 

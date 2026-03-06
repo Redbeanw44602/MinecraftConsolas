@@ -4,8 +4,6 @@
 #include <string>
 #include <type_traits>
 
-#include <windows.h>
-
 #include "platform/App_enums.h"
 #include "platform/Potion_Macros.h"
 #include "util/SharedConstants.h"

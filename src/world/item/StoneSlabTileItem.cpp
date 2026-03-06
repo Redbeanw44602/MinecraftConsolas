@@ -1,7 +1,5 @@
 #include "StoneSlabTileItem.h"
 
-#include <windows.h>
-
 #include "world/Facing.h"
 #include "world/entity/player/Player.h"
 #include "world/level/Level.h"

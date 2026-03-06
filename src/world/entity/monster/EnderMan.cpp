@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "client/renderer/Textures.h"
 #include "nbt/CompoundTag.h"
 #include "util/Mth.h"

@@ -4,8 +4,6 @@
 #include <cstdio>
 #include <string>
 
-#include <windows.h>
-
 #include <4J_Storage.h>
 #include <mss.h>
 

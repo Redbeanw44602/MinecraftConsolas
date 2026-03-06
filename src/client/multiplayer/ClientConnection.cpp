@@ -6,8 +6,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 
 #include "client/Minecraft.h"

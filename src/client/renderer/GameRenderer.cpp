@@ -3,8 +3,6 @@
 #include <cfloat>
 #include <cstdlib>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 #include <4J_Render.h>
 

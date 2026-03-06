@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "client/Minecraft.h"
 #include "client/multiplayer/MultiPlayerLevel.h"
 #include "platform/ui/UILayer.h"

@@ -3,8 +3,6 @@
 #include <cassert>
 #include <cstddef>
 
-#include <windows.h>
-
 #include <iggy.h>
 #include <mss.h>
 

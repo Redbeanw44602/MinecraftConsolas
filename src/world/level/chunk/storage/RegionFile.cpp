@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/Compression.h"

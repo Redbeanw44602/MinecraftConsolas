@@ -1,7 +1,5 @@
 #include "FoodData.h"
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "world/Difficulty.h"
 #include "world/damagesource/DamageSource.h"

@@ -4,8 +4,6 @@
 #include <cfloat>
 #include <cstddef>
 
-#include <windows.h>
-
 #include <4J_Profile.h>
 #include <mss.h>
 

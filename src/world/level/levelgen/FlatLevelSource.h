@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 
 #include "util/console/ArrayWithLength.h"
 #include "world/level/biome/Biome.h"

@@ -2,8 +2,6 @@
 
 #include <memory>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "win/extraX64.h"

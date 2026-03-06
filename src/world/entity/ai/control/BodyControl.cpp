@@ -2,8 +2,6 @@
 
 #include <cstdlib>
 
-#include <windows.h>
-
 #include "util/Mth.h"
 #include "world/entity/Mob.h"
 

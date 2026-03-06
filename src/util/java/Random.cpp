@@ -2,7 +2,6 @@
 
 #include <cassert>
 
-#include <windows.h>
 
 Random::Random() {
     // 4J - jave now uses the system nanosecond counter added to a

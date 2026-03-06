@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include <iggy.h>
 
 #include "platform/ui/UIScene.h"

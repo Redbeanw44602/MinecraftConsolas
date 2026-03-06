@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "platform/gamerules/levelgeneration/structureactions/XboxStructureActionGenerateBox.h"
 #include "platform/gamerules/levelgeneration/structureactions/XboxStructureActionPlaceBlock.h"
 #include "platform/gamerules/levelgeneration/structureactions/XboxStructureActionPlaceContainer.h"

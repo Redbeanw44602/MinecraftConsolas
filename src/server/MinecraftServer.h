@@ -6,8 +6,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include <mss.h>
 
 #include "util/SharedConstants.h"

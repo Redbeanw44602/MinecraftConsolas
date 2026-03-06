@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/console/StringHelpers.h"
 
 #include "Stitcher.h"

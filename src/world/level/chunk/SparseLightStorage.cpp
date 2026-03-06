@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <cstdlib>
 
-#include <windows.h>
-
 #include "util/java/InputOutputStream/DataInputStream.h"
 #include "util/java/InputOutputStream/DataOutputStream.h"
 #include "win/extraX64.h"

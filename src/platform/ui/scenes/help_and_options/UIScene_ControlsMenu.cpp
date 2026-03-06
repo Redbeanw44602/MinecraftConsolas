@@ -3,8 +3,6 @@
 #include <cstddef>
 #include <memory>
 
-#include <windows.h>
-
 #include <4J_Input.h>
 
 #include "client/Minecraft.h"

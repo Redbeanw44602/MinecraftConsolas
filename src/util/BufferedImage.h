@@ -3,8 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 
 class DLCPack;

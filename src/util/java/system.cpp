@@ -3,8 +3,6 @@
 #endif
 #include <cassert>
 
-#include <windows.h>
-
 #include "util/console/ArrayWithLength.h"
 
 #include "System.h"

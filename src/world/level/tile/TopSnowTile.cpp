@@ -4,8 +4,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/java/Random.h"
 #include "world/IconRegister.h"
 #include "world/entity/item/ItemEntity.h"

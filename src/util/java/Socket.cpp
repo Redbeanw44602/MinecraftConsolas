@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "platform/network/GameNetworkManager.h"
 #include "platform/network/NetworkPlayerInterface.h"
 #include "ps3/ShutdownManager.h"

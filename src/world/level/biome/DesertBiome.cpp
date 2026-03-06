@@ -2,8 +2,6 @@
 
 #include <vector>
 
-#include <windows.h>
-
 #include "util/java/Random.h"
 #include "world/level/Level.h"
 #include "world/level/levelgen/feature/DesertWellFeature.h"

@@ -5,8 +5,6 @@
 #include <utility>
 #include <vector>
 
-#include <windows.h>
-
 #include "nbt/CompoundTag.h"
 #include "stats/GenericStats.h"
 #include "util/MemSect.h"

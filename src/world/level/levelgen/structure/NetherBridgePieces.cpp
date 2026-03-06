@@ -5,8 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include <windows.h>
-
 #include "util/java/Random.h"
 #include "world/Direction.h"
 #include "world/level/Level.h"

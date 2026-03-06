@@ -6822,7 +6822,7 @@ bool TileRenderer::tesselateBlockInWorldWithAmbienceOcclusionTexLighting(
             bool prev  = t->setMipmapEnable(
                 false
             ); // 4J added - this is rendering the little bit of grass at the
-               // top of the side of dirt, don't mipmap it
+                // top of the side of dirt, don't mipmap it
             renderNorth(
                 tt,
                 (double)pX,
@@ -7003,7 +7003,7 @@ bool TileRenderer::tesselateBlockInWorldWithAmbienceOcclusionTexLighting(
             bool prev  = t->setMipmapEnable(
                 false
             ); // 4J added - this is rendering the little bit of grass at the
-               // top of the side of dirt, don't mipmap it
+                // top of the side of dirt, don't mipmap it
             renderSouth(
                 tt,
                 (double)pX,
@@ -7179,7 +7179,7 @@ bool TileRenderer::tesselateBlockInWorldWithAmbienceOcclusionTexLighting(
             bool prev  = t->setMipmapEnable(
                 false
             ); // 4J added - this is rendering the little bit of grass at the
-               // top of the side of dirt, don't mipmap it
+                // top of the side of dirt, don't mipmap it
             renderWest(
                 tt,
                 (double)pX,

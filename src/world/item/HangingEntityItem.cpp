@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "stats/GenericStats.h"
 #include "win/strings.h"
 #include "world/Direction.h"

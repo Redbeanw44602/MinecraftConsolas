@@ -2,8 +2,6 @@
 
 #include <cstddef>
 
-#include <windows.h>
-
 #include "world/entity/Mob.h"
 #include "world/entity/ai/control/Control.h"
 #include "world/entity/ai/control/LookControl.h"
