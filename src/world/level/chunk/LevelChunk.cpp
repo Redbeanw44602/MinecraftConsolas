@@ -1872,7 +1872,7 @@ int LevelChunk::getBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -1880,7 +1880,7 @@ int LevelChunk::getBlocksAndData(
         p += upperBlocks->getDataRegion(
             *data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -1896,7 +1896,7 @@ int LevelChunk::getBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -1904,7 +1904,7 @@ int LevelChunk::getBlocksAndData(
         p += upperData->getDataRegion(
             *data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -1922,7 +1922,7 @@ int LevelChunk::getBlocksAndData(
                 y0,
                 z0,
                 x1,
-                min(compressedHeight, y1),
+                std::min(compressedHeight, y1),
                 z1,
                 p
             );
@@ -1930,7 +1930,7 @@ int LevelChunk::getBlocksAndData(
             p += upperBlockLight->getDataRegion(
                 *data,
                 x0,
-                max(y0 - compressedHeight, 0),
+                std::max(y0 - compressedHeight, 0),
                 z0,
                 x1,
                 y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -1945,7 +1945,7 @@ int LevelChunk::getBlocksAndData(
                 y0,
                 z0,
                 x1,
-                min(compressedHeight, y1),
+                std::min(compressedHeight, y1),
                 z1,
                 p
             );
@@ -1953,7 +1953,7 @@ int LevelChunk::getBlocksAndData(
             p += upperSkyLight->getDataRegion(
                 *data,
                 x0,
-                max(y0 - compressedHeight, 0),
+                std::max(y0 - compressedHeight, 0),
                 z0,
                 x1,
                 y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2007,7 +2007,7 @@ bool LevelChunk::testSetBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -2016,7 +2016,7 @@ bool LevelChunk::testSetBlocksAndData(
                || upperBlocks->testSetDataRegion(
                    data,
                    x0,
-                   max(y0 - compressedHeight, 0),
+                   std::max(y0 - compressedHeight, 0),
                    z0,
                    x1,
                    y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2089,7 +2089,7 @@ int LevelChunk::setBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p,
             includeLighting ? NULL : tileUpdatedCallback,
@@ -2100,7 +2100,7 @@ int LevelChunk::setBlocksAndData(
         p += upperBlocks->setDataRegion(
             data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2129,7 +2129,7 @@ int LevelChunk::setBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p,
             includeLighting ? NULL : tileUpdatedCallback,
@@ -2140,7 +2140,7 @@ int LevelChunk::setBlocksAndData(
         p += upperData->setDataRegion(
             data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2161,7 +2161,7 @@ int LevelChunk::setBlocksAndData(
                 y0,
                 z0,
                 x1,
-                min(compressedHeight, y1),
+                std::min(compressedHeight, y1),
                 z1,
                 p
             );
@@ -2169,7 +2169,7 @@ int LevelChunk::setBlocksAndData(
             p += upperBlockLight->setDataRegion(
                 data,
                 x0,
-                max(y0 - compressedHeight, 0),
+                std::max(y0 - compressedHeight, 0),
                 z0,
                 x1,
                 y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2184,7 +2184,7 @@ int LevelChunk::setBlocksAndData(
                 y0,
                 z0,
                 x1,
-                min(compressedHeight, y1),
+                std::min(compressedHeight, y1),
                 z1,
                 p
             );
@@ -2192,7 +2192,7 @@ int LevelChunk::setBlocksAndData(
             p += upperSkyLight->setDataRegion(
                 data,
                 x0,
-                max(y0 - compressedHeight, 0),
+                std::max(y0 - compressedHeight, 0),
                 z0,
                 x1,
                 y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2728,7 +2728,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
 ) {
     int highestNonEmpty = getHighestNonEmptyY();
 
-    ys = min(highestNonEmpty - y0, ys);
+    ys = std::min(highestNonEmpty - y0, ys);
     if (ys < 0) ys = 0;
 
     int x1 = x0 + xs;
@@ -2763,7 +2763,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -2771,7 +2771,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
         p += upperData->getDataRegion(
             data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2788,7 +2788,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -2796,7 +2796,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
         p += upperBlockLight->getDataRegion(
             data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2811,7 +2811,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
             y0,
             z0,
             x1,
-            min(compressedHeight, y1),
+            std::min(compressedHeight, y1),
             z1,
             p
         );
@@ -2819,7 +2819,7 @@ byteArray LevelChunk::getReorderedBlocksAndData(
         p += upperSkyLight->getDataRegion(
             data,
             x0,
-            max(y0 - compressedHeight, 0),
+            std::max(y0 - compressedHeight, 0),
             z0,
             x1,
             y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT,
@@ -2871,7 +2871,7 @@ void LevelChunk::reorderBlocksAndDataToXZY(
     unsigned int halfTileCount = tileCount / 2;
 
     int sectionHeight   = Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
-    int lowerYSpan      = min(y1, sectionHeight) - y0;
+    int lowerYSpan      = std::min(y1, sectionHeight) - y0;
     int upperYSpan      = ys - lowerYSpan;
     int upperSlotOffset = xs * zs * lowerYSpan;
 

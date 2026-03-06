@@ -6,8 +6,7 @@
 class Chunk;
 class Mob;
 
-class DirtyChunkSorter
-: public std::binary_function<const Chunk*, const Chunk*, bool> {
+class DirtyChunkSorter {
 private:
     std::shared_ptr<Mob> cameraEntity;
     int                  playerIndex; // 4J added

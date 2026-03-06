@@ -65,7 +65,7 @@ void ArrowAttackGoal::tick() {
 
     mob->getLookControl()->setLookAt(tar, 30, 30);
 
-    attackTime = max(attackTime - 1, 0);
+    attackTime = std::max(attackTime - 1, 0);
     if (attackTime > 0) return;
     if (targetDistSqr > attackRadiusSqr || !canSee) return;
     fireAtTarget();

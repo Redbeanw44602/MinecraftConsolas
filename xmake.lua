@@ -24,7 +24,7 @@ set_allowedarchs('windows|x64')
 set_runtimes('MT')
 
 set_warnings('none')   -- TODO: Use 'all', 'extra'
-set_languages('c++14') -- TODO: C++23
+set_languages('c++23')
 
 if is_config('debug-menu', true) then
     add_defines('MINECRAFT_DEBUG_MENU')
@@ -41,7 +41,7 @@ if is_mode('debug') then
 end
 
 if is_plat('windows') then
-    add_defines('_CRT_SECURE_NO_WARNINGS', '_CRT_NON_CONFORMING_SWPRINTFS')
+    add_defines('_CRT_SECURE_NO_WARNINGS', '_CRT_NON_CONFORMING_SWPRINTFS', 'NOMINMAX')
     add_defines('_WINDOWS64')
 end
 

@@ -219,15 +219,15 @@ std::int64_t ConsoleSchematicFile::applyBlocksAndData(
     AABB*              destinationBox,
     ESchematicRotation rot
 ) {
-    int xStart = max(destinationBox->x0, (double)chunk->x * 16);
-    int xEnd   = min(destinationBox->x1, (double)((xStart >> 4) << 4) + 16);
+    int xStart = std::max(destinationBox->x0, (double)chunk->x * 16);
+    int xEnd   = std::min(destinationBox->x1, (double)((xStart >> 4) << 4) + 16);
 
     int yStart = destinationBox->y0;
     int yEnd   = destinationBox->y1;
     if (yEnd > Level::maxBuildHeight) yEnd = Level::maxBuildHeight;
 
-    int zStart = max(destinationBox->z0, (double)chunk->z * 16);
-    int zEnd   = min(destinationBox->z1, (double)((zStart >> 4) << 4) + 16);
+    int zStart = std::max(destinationBox->z0, (double)chunk->z * 16);
+    int zEnd   = std::min(destinationBox->z1, (double)((zStart >> 4) << 4) + 16);
 
 #ifdef MINECRAFT_DEBUG
     app.DebugPrintf(
@@ -403,15 +403,15 @@ std::int64_t ConsoleSchematicFile::applyLighting(
     AABB*              destinationBox,
     ESchematicRotation rot
 ) {
-    int xStart = max(destinationBox->x0, (double)chunk->x * 16);
-    int xEnd   = min(destinationBox->x1, (double)((xStart >> 4) << 4) + 16);
+    int xStart = std::max(destinationBox->x0, (double)chunk->x * 16);
+    int xEnd   = std::min(destinationBox->x1, (double)((xStart >> 4) << 4) + 16);
 
     int yStart = destinationBox->y0;
     int yEnd   = destinationBox->y1;
     if (yEnd > Level::maxBuildHeight) yEnd = Level::maxBuildHeight;
 
-    int zStart = max(destinationBox->z0, (double)chunk->z * 16);
-    int zEnd   = min(destinationBox->z1, (double)((zStart >> 4) << 4) + 16);
+    int zStart = std::max(destinationBox->z0, (double)chunk->z * 16);
+    int zEnd   = std::min(destinationBox->z1, (double)((zStart >> 4) << 4) + 16);
 
     int rowBlocksIncluded = (yEnd - yStart) * (zEnd - zStart);
     int blocksIncluded    = (xEnd - xStart) * rowBlocksIncluded;
@@ -974,12 +974,12 @@ void ConsoleSchematicFile::getBlocksAndData(
     int compressedHeight = Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
     if (y0 < Level::COMPRESSED_CHUNK_SECTION_HEIGHT) {
         lowerY0   = y0;
-        lowerY1   = min(y1, compressedHeight);
+        lowerY1   = std::min(y1, compressedHeight);
         bHasLower = true;
     }
     if (y1 >= Level::COMPRESSED_CHUNK_SECTION_HEIGHT) {
         upperY0 =
-            max(y0, compressedHeight) - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
+            std::max(y0, compressedHeight) - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
         upperY1   = y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
         bHasUpper = true;
     }
@@ -1125,12 +1125,12 @@ void ConsoleSchematicFile::setBlocksAndData(
     int compressedHeight = Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
     if (y0 < Level::COMPRESSED_CHUNK_SECTION_HEIGHT) {
         lowerY0   = y0;
-        lowerY1   = min(y1, compressedHeight);
+        lowerY1   = std::min(y1, compressedHeight);
         bHasLower = true;
     }
     if (y1 >= Level::COMPRESSED_CHUNK_SECTION_HEIGHT) {
         upperY0 =
-            max(y0, compressedHeight) - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
+            std::max(y0, compressedHeight) - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
         upperY1   = y1 - Level::COMPRESSED_CHUNK_SECTION_HEIGHT;
         bHasUpper = true;
     }

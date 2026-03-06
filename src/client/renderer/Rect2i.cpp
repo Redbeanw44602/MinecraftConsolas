@@ -1,5 +1,7 @@
 #include "Rect2i.h"
 
+#include <algorithm>
+
 #include <windows.h>
 
 Rect2i::Rect2i(int x, int y, int width, int height) {
@@ -20,10 +22,10 @@ Rect2i* Rect2i::intersect(const Rect2i* other) {
     int x3 = x2 + other->getWidth();
     int y3 = y2 + other->getHeight();
 
-    xPos   = max(x0, x2);
-    yPos   = max(y0, y2);
-    width  = max(0, min(x1, x3) - xPos);
-    height = max(0, min(y1, y3) - yPos);
+    xPos   = std::max(x0, x2);
+    yPos   = std::max(y0, y2);
+    width  = std::max(0, std::min(x1, x3) - xPos);
+    height = std::max(0, std::min(y1, y3) - yPos);
 
     return this;
 }

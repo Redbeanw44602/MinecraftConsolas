@@ -41,22 +41,9 @@ void EditBox::keyPressed(wchar_t ch, int eventKey) {
         return;
     }
 
-
     if (ch == 9) {
         screen->tabPressed();
     }
-    /* 4J removed
-        if (ch == 22)
-        {
-            String msg = Screen.getClipboard();
-            if (msg == null) msg = "";
-            int toAdd = 32 - value.length();
-            if (toAdd > msg.length()) toAdd = msg.length();
-            if (toAdd > 0) {
-                value += msg.substring(0, toAdd);
-            }
-        }
-        */
 
     if (eventKey == Keyboard::KEY_BACK && value.length() > 0) {
         value = value.substr(0, value.length() - 1);

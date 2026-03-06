@@ -90,7 +90,7 @@ ConsoleSaveFileOriginal::ConsoleSaveFileOriginal(
 
     if (forceCleanSave) fileSize = 0;
 
-    DWORD heapSize = max(
+    DWORD heapSize = std::max(
         fileSize,
         (DWORD)(1024 * 1024 * 2)
     ); // 4J Stu - Our files are going to be bigger than 2MB so allocate high to

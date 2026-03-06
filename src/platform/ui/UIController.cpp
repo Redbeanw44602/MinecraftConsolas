@@ -1452,13 +1452,13 @@ void UIController::setupCustomDrawMatrices(
                  * customDrawRegion->y1;
 
     m_customRenderingClearRect.left =
-        min(m_customRenderingClearRect.left, left);
+        std::min(m_customRenderingClearRect.left, left);
     m_customRenderingClearRect.right =
-        max(m_customRenderingClearRect.right, right);
+        std::max(m_customRenderingClearRect.right, right);
     ;
-    m_customRenderingClearRect.top = min(m_customRenderingClearRect.top, top);
+    m_customRenderingClearRect.top = std::min(m_customRenderingClearRect.top, top);
     m_customRenderingClearRect.bottom =
-        max(m_customRenderingClearRect.bottom, bottom);
+        std::max(m_customRenderingClearRect.bottom, bottom);
 
     if (!m_bScreenWidthSetup) {
         Minecraft* pMinecraft = Minecraft::GetInstance();

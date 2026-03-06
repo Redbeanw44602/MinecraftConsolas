@@ -19,9 +19,9 @@ FoodData::FoodData() {
 }
 
 void FoodData::eat(int food, float saturationModifier) {
-    foodLevel = min(food + foodLevel, FoodConstants::MAX_FOOD);
+    foodLevel = std::min(food + foodLevel, FoodConstants::MAX_FOOD);
     saturationLevel =
-        min(saturationLevel + (float)food * saturationModifier * 2.0f,
+        std::min(saturationLevel + (float)food * saturationModifier * 2.0f,
             (float)foodLevel);
 }
 
@@ -38,9 +38,9 @@ void FoodData::tick(std::shared_ptr<Player> player) {
         exhaustionLevel -= FoodConstants::EXHAUSTION_DROP;
 
         if (saturationLevel > 0) {
-            saturationLevel = max(saturationLevel - 1, 0.0f);
+            saturationLevel = std::max(saturationLevel - 1, 0.0f);
         } else if (difficulty > Difficulty::PEACEFUL) {
-            foodLevel = max(foodLevel - 1, 0);
+            foodLevel = std::max(foodLevel - 1, 0);
         }
     }
 
@@ -100,7 +100,7 @@ bool FoodData::needsFood() { return foodLevel < FoodConstants::MAX_FOOD; }
 
 void FoodData::addExhaustion(float amount) {
     exhaustionLevel =
-        min(exhaustionLevel + amount, FoodConstants::MAX_SATURATION * 2);
+        std::min(exhaustionLevel + amount, FoodConstants::MAX_SATURATION * 2);
 }
 
 float FoodData::getExhaustionLevel() { return exhaustionLevel; }

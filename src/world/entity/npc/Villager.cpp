@@ -2,11 +2,11 @@
 
 #include <algorithm>
 #include <cstddef>
-#include <type_traits>
 #include <vector>
 
 #include "client/renderer/Textures.h"
 #include "nbt/CompoundTag.h"
+#include "util/LegacyRNG.h"
 #include "util/Mth.h"
 #include "util/SharedConstants.h"
 #include "util/java/Random.h"
@@ -840,7 +840,7 @@ void Villager::addOffers(int addCount) {
     }
 
     // shuffle the list to make it more interesting
-    std::random_shuffle(newOffers->begin(), newOffers->end());
+    std::shuffle(newOffers->begin(), newOffers->end(), LegacyRNG());
 
     if (offers == NULL) {
         offers = new MerchantRecipeList();

@@ -17,7 +17,7 @@ ByteArrayInputStream::ByteArrayInputStream(
     unsigned int length
 )
 : pos(offset),
-  count(min(offset + length, buf.length)),
+  count(std::min(offset + length, buf.length)),
   mark(offset) {
     this->buf = buf;
 }
@@ -85,7 +85,7 @@ int ByteArrayInputStream::read(
 ) {
     if (pos == count) return -1;
 
-    int k = min(length, count - pos);
+    int k = std::min(length, count - pos);
     XMemCpy(&b[offset], &buf[pos], k);
     // std::copy( buf->data+pos, buf->data+pos+k, b->data + offset ); // Or this
     // instead?

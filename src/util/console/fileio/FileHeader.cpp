@@ -36,7 +36,7 @@ FileHeader::AddFile(const std::wstring& name, unsigned int length /* = 0 */) {
     memcpy(
         &filename,
         name.c_str(),
-        min(sizeof(wchar_t) * 64, sizeof(wchar_t) * name.length())
+        std::min(sizeof(wchar_t) * 64, sizeof(wchar_t) * name.length())
     );
 
     // Would a map be more efficient? Our file tables probably won't be very big

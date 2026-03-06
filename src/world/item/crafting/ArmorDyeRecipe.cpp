@@ -71,7 +71,7 @@ std::shared_ptr<ItemInstance> ArmorDyeRecipe::assembleDyedArmor(
                         float green = (float)((color >> 8) & 0xFF) / 0xFF;
                         float blue  = (float)(color & 0xFF) / 0xFF;
 
-                        intensityTotal += max(red, max(green, blue)) * 0xFF;
+                        intensityTotal += std::max(red, std::max(green, blue)) * 0xFF;
 
                         colorTotals[0] += red * 0xFF;
                         colorTotals[1] += green * 0xFF;
@@ -88,7 +88,7 @@ std::shared_ptr<ItemInstance> ArmorDyeRecipe::assembleDyedArmor(
                 int green = (int)(Sheep::COLOR[tileData][1] * 0xFF);
                 int blue  = (int)(Sheep::COLOR[tileData][2] * 0xFF);
 
-                intensityTotal += max(red, max(green, blue));
+                intensityTotal += std::max(red, std::max(green, blue));
 
                 colorTotals[0] += red;
                 colorTotals[1] += green;
@@ -107,7 +107,7 @@ std::shared_ptr<ItemInstance> ArmorDyeRecipe::assembleDyedArmor(
     int blue  = (colorTotals[2] / colourCounts);
 
     float averageIntensity = (float)intensityTotal / colourCounts;
-    float resultIntensity  = (float)max(red, max(green, blue));
+    float resultIntensity  = (float)std::max(red, std::max(green, blue));
     //        System.out.println(averageIntensity + ", " + resultIntensity);
 
     red   = (int)((float)red * averageIntensity / resultIntensity);
@@ -134,9 +134,9 @@ const ItemInstance* ArmorDyeRecipe::getResultItem() { return NULL; }
 const int ArmorDyeRecipe::getGroup() { return ShapedRecipy::eGroupType_Armour; }
 
 // 4J-PB
-bool ArmorDyeRecipe::requires(int iRecipe) { return false; }
+bool ArmorDyeRecipe::needs(int iRecipe) { return false; }
 
-void ArmorDyeRecipe::requires(INGREDIENTS_REQUIRED* pIngReq) {
+void ArmorDyeRecipe::needs(INGREDIENTS_REQUIRED* pIngReq) {
     // int iCount=0;
     // bool bFound;
     // int j;

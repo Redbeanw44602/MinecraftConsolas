@@ -340,7 +340,7 @@ bool MineShaftPieces::MineShaftRoom::postProcess(
         boundingBox->y0 + 1,
         boundingBox->z0,
         boundingBox->x1,
-        min(boundingBox->y0 + 3, boundingBox->y1),
+        std::min(boundingBox->y0 + 3, boundingBox->y1),
         boundingBox->z1,
         0,
         0,

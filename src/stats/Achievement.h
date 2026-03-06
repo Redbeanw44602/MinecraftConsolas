@@ -13,7 +13,7 @@ class Achievement : public Stat {
 public:
     const int x, y;
     Achievement*
-        requires;
+        needs;
 
 private:
     const std::wstring desc;
@@ -33,7 +33,7 @@ public:
         int                 x,
         int                 y,
         Item*               icon,
-        Achievement* requires
+        Achievement* needs
     );
     Achievement(
         int                 id,
@@ -41,7 +41,7 @@ public:
         int                 x,
         int                 y,
         Tile*               icon,
-        Achievement* requires
+        Achievement* needs
     );
     Achievement(
         int                           id,
@@ -49,7 +49,7 @@ public:
         int                           x,
         int                           y,
         std::shared_ptr<ItemInstance> icon,
-        Achievement* requires
+        Achievement* needs
     );
 
     Achievement* setAwardLocallyOnly();

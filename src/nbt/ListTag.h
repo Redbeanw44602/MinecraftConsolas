@@ -61,8 +61,9 @@ public:
         strcpy(newPrefix, prefix);
         strcat(newPrefix, "   ");
         auto itEnd = list.end();
-        for (auto it = list.begin(); it != itEnd; it++)
-            (*it)->print(newPrefix, out);
+        // FIXME: Incompatible ostream -> wostream.
+        // for (auto it = list.begin(); it != itEnd; it++)
+        //     (*it)->print(newPrefix, out);
         delete[] newPrefix;
         out << prefix << "}" << std::endl;
     }

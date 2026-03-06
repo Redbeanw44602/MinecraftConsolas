@@ -348,10 +348,10 @@ int EnchantmentHelper::getEnchantmentCost(
     int selected = random->nextInt(8) + 1 + (bookcases >> 1)
                  + random->nextInt(bookcases + 1);
     if (slot == 0) {
-        return max((selected / 3), 1);
+        return std::max((selected / 3), 1);
     }
     if (slot == 1) {
-        return max(selected, bookcases * 2);
+        return std::max(selected, bookcases * 2);
     }
     return selected;
 }

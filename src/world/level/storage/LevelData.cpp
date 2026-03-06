@@ -102,11 +102,11 @@ LevelData::LevelData(CompoundTag* tag) {
     m_xzSize    = tag->getInt(L"XZSize");
     m_hellScale = tag->getInt(L"HellScale");
 
-    m_xzSize = min(m_xzSize, LEVEL_MAX_WIDTH);
-    m_xzSize = max(m_xzSize, LEVEL_MIN_WIDTH);
+    m_xzSize = std::min(m_xzSize, LEVEL_MAX_WIDTH);
+    m_xzSize = std::max(m_xzSize, LEVEL_MIN_WIDTH);
 
-    m_hellScale = min(m_hellScale, HELL_LEVEL_MAX_SCALE);
-    m_hellScale = max(m_hellScale, HELL_LEVEL_MIN_SCALE);
+    m_hellScale = std::min(m_hellScale, HELL_LEVEL_MAX_SCALE);
+    m_hellScale = std::max(m_hellScale, HELL_LEVEL_MIN_SCALE);
 
     int hellXZSize = m_xzSize / m_hellScale;
     while (hellXZSize > HELL_LEVEL_MAX_WIDTH
@@ -176,11 +176,11 @@ LevelData::LevelData(
     m_xzSize                   = levelSettings->getXZSize();
     m_hellScale                = levelSettings->getHellScale();
 
-    m_xzSize = min(m_xzSize, LEVEL_MAX_WIDTH);
-    m_xzSize = max(m_xzSize, LEVEL_MIN_WIDTH);
+    m_xzSize = std::min(m_xzSize, LEVEL_MAX_WIDTH);
+    m_xzSize = std::max(m_xzSize, LEVEL_MIN_WIDTH);
 
-    m_hellScale = min(m_hellScale, HELL_LEVEL_MAX_SCALE);
-    m_hellScale = max(m_hellScale, HELL_LEVEL_MIN_SCALE);
+    m_hellScale = std::min(m_hellScale, HELL_LEVEL_MAX_SCALE);
+    m_hellScale = std::max(m_hellScale, HELL_LEVEL_MIN_SCALE);
 
     int hellXZSize = m_xzSize / m_hellScale;
     while (hellXZSize > HELL_LEVEL_MAX_WIDTH

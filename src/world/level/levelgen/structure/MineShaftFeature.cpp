@@ -19,7 +19,7 @@ bool MineShaftFeature::isFeatureChunk(int x, int z, bool bIsSuperflat) {
 
     return forcePlacement
         || (random->nextInt(100) == 0
-            && random->nextInt(80) < max(abs(x), abs(z)));
+            && random->nextInt(80) < std::max(abs(x), abs(z)));
 }
 
 StructureStart* MineShaftFeature::createStructureStart(int x, int z) {

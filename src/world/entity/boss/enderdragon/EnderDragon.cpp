@@ -989,7 +989,7 @@ void EnderDragon::findNewTarget() {
     case e_EnderdragonAction_HoldingPattern: {
         if (!newTarget && m_currentPath != NULL && m_currentPath->isDone()) {
             // Distance is 64, which is the radius of the circle
-            int eggHeight = max(
+            int eggHeight = std::max(
                 level->seaLevel + 5,
                 level->getTopSolidBlock(PODIUM_X_POS, PODIUM_Z_POS)
             ); // level->getHeightmap(4,4);
@@ -1073,7 +1073,7 @@ void EnderDragon::findNewTarget() {
 
             // To get the angle to the player correct when landing, head to a
             // node diametrically opposite the player, then swoop in to 4,4
-            int eggHeight = max(
+            int eggHeight = std::max(
                 level->seaLevel + 5,
                 level->getTopSolidBlock(PODIUM_X_POS, PODIUM_Z_POS)
             ); // level->getHeightmap(4,4);
@@ -1662,7 +1662,7 @@ int EnderDragon::findClosestNode() {
             // Fix for #77202 - TU9: Content: Gameplay: The Ender Dragon
             // sometimes flies through terrain Add minimum height
             nodeY =
-                max((level->seaLevel + 10),
+                std::max((level->seaLevel + 10),
                     level->getTopSolidBlock(nodeX, nodeZ) + yAdjustment);
 
             app.DebugPrintf(

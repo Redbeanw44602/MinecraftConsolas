@@ -173,9 +173,9 @@ bool ItemEntity::merge(std::shared_ptr<ItemEntity> target) {
     if (targetItem->count + myItem->count > targetItem->getMaxStackSize())
         return false;
 
-    targetItem->count += myItem->count;
-    target->throwTime  = max(target->throwTime, this->throwTime);
-    target->age        = min(target->age, this->age);
+    targetItem->count   += myItem->count;
+    target->throwTime  = std::max(target->throwTime, this->throwTime);
+    target->age         = std::min(target->age, this->age);
     target->setItem(targetItem);
     remove();
 

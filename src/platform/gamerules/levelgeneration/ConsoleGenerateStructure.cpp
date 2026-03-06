@@ -131,9 +131,9 @@ BoundingBox* ConsoleGenerateStructure::getBoundingBox() {
         maxX = maxY = maxZ = 1;
         for (auto it = m_actions.begin(); it != m_actions.end(); ++it) {
             ConsoleGenerateStructureAction* action = *it;
-            maxX = max(maxX, action->getEndX());
-            maxY = max(maxY, action->getEndY());
-            maxZ = max(maxZ, action->getEndZ());
+            maxX = std::max(maxX, action->getEndX());
+            maxY = std::max(maxY, action->getEndY());
+            maxZ = std::max(maxZ, action->getEndZ());
         }
 
         boundingBox =

@@ -77,7 +77,7 @@ bool AddEnchantmentRuleDefinition::enchantItem(
             Enchantment* e = Enchantment::enchantments[m_enchantmentId];
 
             if (e != NULL && e->category->canEnchant(item->getItem())) {
-                int level = min(e->getMaxLevel(), m_enchantmentLevel);
+                int level = std::min(e->getMaxLevel(), m_enchantmentLevel);
                 item->enchant(e, m_enchantmentLevel);
                 enchanted = true;
             }

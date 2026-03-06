@@ -98,7 +98,7 @@ void ControlledByPlayerGoal::tick() {
     float sin           = Mth::sin(pig->yRot * PI / 180);
     float cos           = Mth::cos(pig->yRot * PI / 180);
     float aproxSpeed    = pig->getSpeed() * friction2;
-    float dist          = max((int)moveSpeed, 1);
+    float dist          = std::max((int)moveSpeed, 1);
     dist                = aproxSpeed / dist;
     float normMoveSpeed = moveSpeed * dist;
     float xa            = -(normMoveSpeed * sin);

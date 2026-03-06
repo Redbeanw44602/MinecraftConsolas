@@ -126,7 +126,7 @@ void RepairMenu::createResult() {
                 && Item::items[result->id]
                        ->isValidRepairItem(input, addition)) {
                 int repairAmount =
-                    min(result->getDamageValue(), result->getMaxDamage() / 4);
+                    std::min(result->getDamageValue(), result->getMaxDamage() / 4);
                 if (repairAmount <= 0) {
                     resultSlots->setItem(0, nullptr);
                     cost = 0;
@@ -138,10 +138,10 @@ void RepairMenu::createResult() {
                             result->getDamageValue() - repairAmount;
                         result->setAuxValue(resultDamage);
                         price +=
-                            max(1, repairAmount / 100) + enchantments->size();
+                            std::max(1, repairAmount / 100) + enchantments->size();
 
                         repairAmount =
-                            min(result->getDamageValue(),
+                            std::min(result->getDamageValue(),
                                 result->getMaxDamage() / 4);
                         count++;
                     }
@@ -167,12 +167,12 @@ void RepairMenu::createResult() {
 
                     if (resultDamage < result->getAuxValue()) {
                         result->setAuxValue(resultDamage);
-                        price += max(1, additional / 100);
+                        price += std::max(1, additional / 100);
                         if (DEBUG_COST) {
                             app.DebugPrintf(
                                 "Repairing; price is now %d (went up by %d)\n",
                                 price,
-                                max(1, additional / 100)
+                                std::max(1, additional / 100)
                             );
                         }
                     }
@@ -191,8 +191,8 @@ void RepairMenu::createResult() {
                         localIt != enchantments->end() ? localIt->second : 0;
                     int level = it->second;
                     level =
-                        (current == level) ? level += 1 : max(level, current);
-                    int  extra      = level - current;
+                        (current == level) ? level += 1 : std::max(level, current);
+                    int  extra                      = level - current;
                     bool compatible = enchantment->canEnchant(input);
 
                     if (player->abilities.instabuild) compatible = true;
@@ -240,7 +240,7 @@ void RepairMenu::createResult() {
                         break;
                     }
 
-                    if (usingBook) fee = max(1, fee / 2);
+                    if (usingBook) fee = std::max(1, fee / 2);
 
                     price += fee * extra;
                     if (DEBUG_COST) {
@@ -309,7 +309,7 @@ void RepairMenu::createResult() {
                 break;
             }
 
-            if (usingBook) fee = max(1, fee / 2);
+            if (usingBook) fee = std::max(1, fee / 2);
 
             tax += count + level * fee;
             if (DEBUG_COST) {
@@ -321,7 +321,7 @@ void RepairMenu::createResult() {
             }
         }
 
-        if (usingBook) tax = max(1, tax / 2);
+        if (usingBook) tax = std::max(1, tax / 2);
 
         cost = tax + price;
         if (price <= 0) {

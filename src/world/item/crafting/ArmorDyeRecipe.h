@@ -27,7 +27,7 @@ public:
 
     // 4J-PB
     virtual bool
-        requires(int iRecipe);
+        needs(int iRecipe);
     virtual void
-        requires(INGREDIENTS_REQUIRED* pIngReq);
+        needs(INGREDIENTS_REQUIRED* pIngReq);
 };

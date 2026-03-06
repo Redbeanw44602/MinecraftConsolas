@@ -1593,7 +1593,7 @@ void Recipes::buildRecipeIngredientsArray(void) {
         Recipy* recipe = *it;
         // wprintf(L"RECIPE - [%d] is
         // %w\n",iCount,recipe->getResultItem()->getItem()->getName());
-        recipe->requires(&m_pRecipeIngredientsRequired[iCount++]);
+        recipe->needs(&m_pRecipeIngredientsRequired[iCount++]);
     }
 
     // printf("Total recipes in buildRecipeIngredientsArray - %d",iCount);

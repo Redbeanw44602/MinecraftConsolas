@@ -47,8 +47,8 @@ public:
 
     // 4J-PB - to return the items required to make a recipe
     virtual bool
-        requires(int iRecipe);
+        needs(int iRecipe);
     virtual void
-        requires(INGREDIENTS_REQUIRED* pIngReq);
+        needs(INGREDIENTS_REQUIRED* pIngReq);
 };
 

@@ -76,8 +76,8 @@ bool StitchSlot::add(TextureHolder* textureHolder) {
 
             // The 'fattest' area should be used (or when tied, the right hand
             // one)
-            int right  = max(height, spareWidth);
-            int bottom = max(width, spareHeight);
+            int right  = std::max(height, spareWidth);
+            int bottom = std::max(width, spareHeight);
             if (right >= bottom) {
                 subSlots->push_back(new StitchSlot(
                     originX,

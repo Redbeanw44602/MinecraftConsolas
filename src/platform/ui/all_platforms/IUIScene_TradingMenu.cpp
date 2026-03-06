@@ -210,7 +210,7 @@ void IUIScene_TradingMenu::updateDisplay() {
                 m_activeOffers.push_back(
                     std::pair<MerchantRecipe*, int>(recipe, unfilteredIndex)
                 );
-                firstValidTrade = min(firstValidTrade, unfilteredIndex);
+                firstValidTrade = std::min(firstValidTrade, unfilteredIndex);
             }
             ++unfilteredIndex;
         }

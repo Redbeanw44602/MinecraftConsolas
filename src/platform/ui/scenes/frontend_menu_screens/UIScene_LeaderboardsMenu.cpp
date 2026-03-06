@@ -567,7 +567,7 @@ void UIScene_LeaderboardsMenu::ReadStats(int startIndex) {
         m_listEntries.clearList();
     } else {
         m_newEntryIndex = (unsigned int)startIndex;
-        // m_newReadSize	= min((int)READ_SIZE,
+        // m_newReadSize	= std::min((int)READ_SIZE,
         // (int)m_leaderboard.m_totalEntryCount-(startIndex-1));
     }
 

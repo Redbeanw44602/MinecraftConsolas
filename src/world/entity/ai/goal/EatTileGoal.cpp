@@ -53,7 +53,7 @@ bool EatTileGoal::canContinueToUse() { return eatAnimationTick > 0; }
 int EatTileGoal::getEatAnimationTick() { return eatAnimationTick; }
 
 void EatTileGoal::tick() {
-    eatAnimationTick = max(0, eatAnimationTick - 1);
+    eatAnimationTick = std::max(0, eatAnimationTick - 1);
     if (eatAnimationTick != 4) return;
 
     int xx = Mth::floor(mob->x);

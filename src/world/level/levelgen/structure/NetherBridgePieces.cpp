@@ -4367,8 +4367,8 @@ bool NetherBridgePieces::CastleCorridorStairsPiece::postProcess(
     // generate stairs
     int stairsData = getOrientationData(Tile::stairs_netherBricks_Id, 2);
     for (int step = 0; step <= 9; step++) {
-        int floor = max(1, 7 - step);
-        int roof  = min(max(floor + 5, 14 - step), 13);
+        int floor = std::max(1, 7 - step);
+        int roof  = std::min(std::max(floor + 5, 14 - step), 13);
         int z     = step;
 
         // floor

@@ -383,7 +383,7 @@ void UIScene_HUD::SetHealth(
     bool bBlink,
     bool bPoison
 ) {
-    int maxHealth = max(iHealth, iLastHealth);
+    int maxHealth = std::max(iHealth, iLastHealth);
     if (maxHealth != m_lastMaxHealth || bBlink != m_lastHealthBlink
         || bPoison != m_lastHealthPoison) {
         m_lastMaxHealth    = maxHealth;
@@ -787,7 +787,7 @@ void UIScene_HUD::handleTimerComplete(int id) {
     bool anyVisible = false;
     if (pMinecraft->localplayers[m_iPad] != NULL) {
         Gui* pGui = pMinecraft->gui;
-        // DWORD messagesToDisplay = min( CHAT_LINES_COUNT,
+        // DWORD messagesToDisplay = std::min( CHAT_LINES_COUNT,
         // pGui->getMessagesCount(m_iPad) );
         for (unsigned int i = 0; i < CHAT_LINES_COUNT; ++i) {
             float opacity = pGui->getOpacity(m_iPad, i);

@@ -53,7 +53,7 @@ void ByteArrayOutputStream::write(
 
     // If we will fill the buffer we need to make it bigger
     if (count + length >= buf.length)
-        buf.resize(max(count + length + 1, buf.length * 2));
+        buf.resize(std::max(count + length + 1, buf.length * 2));
 
     XMemCpy(&buf[count], &b[offset], length);
     // std::copy( b->data+offset, b->data+offset+length, buf->data + count ); //

@@ -183,7 +183,7 @@ void ApplySchematicRuleDefinition::processSchematic(
     if (m_locationBox == NULL) updateLocationBox();
     if (chunkBox->intersects(m_locationBox)) {
         m_locationBox->y1 =
-            min((double)Level::maxBuildHeight, m_locationBox->y1);
+            std::min((double)Level::maxBuildHeight, m_locationBox->y1);
 
 #ifdef MINECRAFT_DEBUG
         app.DebugPrintf(
@@ -237,7 +237,7 @@ void ApplySchematicRuleDefinition::processSchematicLighting(
     if (m_locationBox == NULL) updateLocationBox();
     if (chunkBox->intersects(m_locationBox)) {
         m_locationBox->y1 =
-            min((double)Level::maxBuildHeight, m_locationBox->y1);
+            std::min((double)Level::maxBuildHeight, m_locationBox->y1);
 
 #ifdef MINECRAFT_DEBUG
         app.DebugPrintf(

@@ -31,7 +31,7 @@ bool MerchantResultSlot::mayPlace(std::shared_ptr<ItemInstance> item) {
 
 std::shared_ptr<ItemInstance> MerchantResultSlot::remove(int c) {
     if (hasItem()) {
-        removeCount += min(c, getItem()->count);
+        removeCount += std::min(c, getItem()->count);
     }
     return Slot::remove(c);
 }

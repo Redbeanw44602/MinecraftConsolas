@@ -99,7 +99,7 @@ bool AddItemRuleDefinition::addItemToContainer(
     bool added = false;
     if (Item::items[m_itemId] != NULL) {
         int quantity =
-            min(m_quantity, Item::items[m_itemId]->getMaxStackSize());
+            std::min(m_quantity, Item::items[m_itemId]->getMaxStackSize());
         std::shared_ptr<ItemInstance> newItem = std::shared_ptr<ItemInstance>(
             new ItemInstance(m_itemId, quantity, m_auxValue)
         );

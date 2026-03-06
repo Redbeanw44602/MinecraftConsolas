@@ -1044,7 +1044,7 @@ float GameRenderer::getNightVisionScale(
     if (duration > (SharedConstants::TICKS_PER_SECOND * 10)) {
         return 1.0f;
     } else {
-        float flash = max(0.0f, (float)duration - a);
+        float flash = std::max(0.0f, (float)duration - a);
         return .7f
              + Mth::sin(flash * PI * .05f)
                    * .3f; // was:  .7 + sin(flash*pi*0.2) * .3
@@ -2364,7 +2364,7 @@ void GameRenderer::setupFog(int i, float alpha) {
 
         if (mc->level->dimension->isFoggyAt((int)player->x, (int)player->z)) {
             glFogf(GL_FOG_START, distance * 0.05f);
-            glFogf(GL_FOG_END, min(distance, 16 * 16 * .75f) * .5f);
+            glFogf(GL_FOG_END, std::min(distance, 16 * 16 * .75f) * .5f);
         }
     }
 

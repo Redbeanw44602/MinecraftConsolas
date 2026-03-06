@@ -307,8 +307,8 @@ void HellRandomLevelSource::buildSurfaces(
                                                               // needs the value
                                                               // to exist for
                                                               // the linker
-                                        y         = min(y, genDepthMinusOne);
-                                        runDepth += 1;
+                                        y         = std::min(y, genDepthMinusOne);
+                                        runDepth  += 1;
                                         offs =
                                             (z * 16 + x) * Level::genDepth + y;
                                     } else {

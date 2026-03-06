@@ -31,7 +31,7 @@ bool FurnaceResultSlot::mayPlace(std::shared_ptr<ItemInstance> item) {
 
 std::shared_ptr<ItemInstance> FurnaceResultSlot::remove(int c) {
     if (hasItem()) {
-        removeCount += min(c, getItem()->count);
+        removeCount += std::min(c, getItem()->count);
     }
     return Slot::remove(c);
 }

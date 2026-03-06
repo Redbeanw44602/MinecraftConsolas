@@ -57,7 +57,7 @@ void OzelotAttackGoal::tick() {
 
     mob->getNavigation()->moveTo(target.lock(), speed);
 
-    attackTime = max(attackTime - 1, 0);
+    attackTime = std::max(attackTime - 1, 0);
 
     if (distSqr > meleeRadiusSqr) return;
     if (attackTime > 0) return;

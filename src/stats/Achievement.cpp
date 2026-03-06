@@ -29,7 +29,7 @@ Achievement::Achievement(
     int                 x,
     int                 y,
     Item*               icon,
-    Achievement* requires
+    Achievement* needs
 )
 : Stat(
       Achievements::ACHIEVEMENT_OFFSET + id,
@@ -39,7 +39,7 @@ Achievement::Achievement(
   icon(new ItemInstance(icon)),
   x(x),
   y(y),
-  requires(requires) {}
+  needs(needs) {}
 
   Achievement::Achievement(
       int                 id,
@@ -47,7 +47,7 @@ Achievement::Achievement(
       int                 x,
       int                 y,
       Tile*               icon,
-      Achievement* requires
+      Achievement* needs
   )
 : Stat(
       Achievements::ACHIEVEMENT_OFFSET + id,
@@ -57,7 +57,7 @@ Achievement::Achievement(
   icon(new ItemInstance(icon)),
   x(x),
   y(y),
-  requires(requires) {}
+  needs(needs) {}
 
   Achievement::Achievement(
       int                           id,
@@ -65,7 +65,7 @@ Achievement::Achievement(
       int                           x,
       int                           y,
       std::shared_ptr<ItemInstance> icon,
-      Achievement* requires
+      Achievement* needs
   )
 : Stat(
       Achievements::ACHIEVEMENT_OFFSET + id,
@@ -75,7 +75,7 @@ Achievement::Achievement(
   icon(icon),
   x(x),
   y(y),
-  requires(requires) {}
+  needs(needs) {}
 
       Achievement
       * Achievement::setAwardLocallyOnly() {
