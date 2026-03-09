@@ -45,58 +45,24 @@ if is_plat('windows') then
     add_defines('_WINDOWS64')
 end
 
--- targets (lib)
-
-local deps = 'src/deps'
-
-if is_plat('windows') then
-
-target('4jlibs')
-    set_kind('phony')
-    add_includedirs(deps .. '/4jlibs/include', {public = true})
-    add_linkdirs(deps .. '/4jlibs/lib', {public = true})
-    add_links(
-        '4J_Render',
-        '4J_Storage',
-        '4J_Input',
-        {public = true}
-    )
-
-target('gdraw')
-    set_kind('static')
-    add_files(deps .. '/gdraw/src/**.cpp')
-    add_deps('mss', 'iggy')
-    add_includedirs(deps .. '/gdraw/include', {public = true})
-
-target('mss')
-    set_kind('phony')
-    add_includedirs(deps .. '/mss/include', {public = true})
-    add_links(deps .. '/mss/lib/mss64.lib', {public = true})
-
-target('iggy')
-    set_kind('phony')
-    add_includedirs(deps .. '/iggy/include', {public = true})
-    add_links(deps .. '/iggy/lib/iggy_w64.lib', {public = true})
-
-target('xinput')
-    set_kind('phony')
-    add_links(deps .. '/xinput/lib/xinput.lib', {public = true})
-
-end
-
--- targets (binary)
+-- targets
 
 target('client')
     set_kind('binary')
     set_basename('minecraft')
 
     add_files('src/**.cpp')
-    add_packages('zlib')
     add_includedirs('src')
-
-    remove_files(deps .. '/**')
+    add_packages(
+        'zlib',
+        'libsdl3'
+    )
 
     if is_plat('windows') then
-        add_deps('4jlibs', 'gdraw', 'iggy', 'mss', 'xinput')
+        add_deps('4jlibs', 'gdraw', 'iggy', 'mss')
         add_syslinks('user32', 'd3d11')
     end
+
+-- subdir (deps)
+
+includes('src-deps/*')
