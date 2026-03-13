@@ -572,13 +572,13 @@ void Tesselator::tileQuad(
 
     // AP - alpha cut out is expensive on vita. This will choose the correct
     // data buffer depending on cut out enabled
-    std::int8_t* pShortData;
+    std::int16_t* pShortData;
     if (!alphaCutOutEnabled) {
-        pShortData  = (std::int8_t*)&_array->data[p];
+        pShortData  = (std::int16_t*)&_array->data[p];
         p          += 16;
         vertices   += 4;
     } else {
-        pShortData  = (std::int8_t*)&_array2->data[p2];
+        pShortData  = (std::int16_t*)&_array2->data[p2];
         p2         += 16;
         vertices2  += 4;
     }
@@ -887,21 +887,21 @@ void Tesselator::vertex(float x, float y, float z) {
 #ifdef __PSVITA__
         // AP - alpha cut out is expensive on vita. This will choose the correct
         // data buffer depending on cut out enabled
-        std::int8_t* pShortData;
+        std::int16_t* pShortData;
         if (!alphaCutOutEnabled) {
-            pShortData = (std::int8_t*)&_array->data[p];
+            pShortData = (std::int16_t*)&_array->data[p];
         } else {
-            pShortData = (std::int8_t*)&_array2->data[p2];
+            pShortData = (std::int16_t*)&_array2->data[p2];
         }
 #else
-        std::int8_t* pShortData = (std::int8_t*)&_array->data[p];
+        std::int16_t* pShortData = (std::int16_t*)&_array->data[p];
 
 #endif
 
 
 #ifdef __PS3__
-        float tex2U   = ((std::int8_t*)&_tex2)[1] + 8;
-        float tex2V   = ((std::int8_t*)&_tex2)[0] + 8;
+        float tex2U   = ((std::int16_t*)&_tex2)[1] + 8;
+        float tex2V   = ((std::int16_t*)&_tex2)[0] + 8;
         float colVal1 = ((col & 0xff000000) >> 24) / 256.0f;
         float colVal2 = ((col & 0x00ff0000) >> 16) / 256.0f;
         float colVal3 = ((col & 0x0000ff00) >> 8) / 256.0f;
@@ -926,14 +926,14 @@ void Tesselator::vertex(float x, float y, float z) {
 
         p += 4;
 #else
-        pShortData[0]  = (((int)((x + xo) * 1024.0f)) & 0xffff);
-        pShortData[1]  = (((int)((y + yo) * 1024.0f)) & 0xffff);
-        pShortData[2]  = (((int)((z + zo) * 1024.0f)) & 0xffff);
-        pShortData[3]  = ipackedcol;
-        pShortData[4]  = (((int)(uu * 8192.0f)) & 0xffff);
-        pShortData[5]  = (((int)(v * 8192.0f)) & 0xffff);
-        std::int8_t u2 = ((std::int8_t*)&_tex2)[0];
-        std::int8_t v2 = ((std::int8_t*)&_tex2)[1];
+        pShortData[0]   = (((int)((x + xo) * 1024.0f)) & 0xffff);
+        pShortData[1]   = (((int)((y + yo) * 1024.0f)) & 0xffff);
+        pShortData[2]   = (((int)((z + zo) * 1024.0f)) & 0xffff);
+        pShortData[3]   = ipackedcol;
+        pShortData[4]   = (((int)(uu * 8192.0f)) & 0xffff);
+        pShortData[5]   = (((int)(v * 8192.0f)) & 0xffff);
+        std::int16_t u2 = ((std::int16_t*)&_tex2)[0];
+        std::int16_t v2 = ((std::int16_t*)&_tex2)[1];
 #if defined _XBOX_ONE || defined __ORBIS__
         // Optimisation - pack the second UVs into a single short (they could
         // actually go in a byte), which frees up a short to store the x offset
@@ -1042,11 +1042,11 @@ void Tesselator::vertex(float x, float y, float z) {
             _array->data[p + 7] = ((_tex2 >> 16) & 0xffff) | (_tex2 << 16);
 #else
 #ifdef __PS3__
-            std::int8_t  tex2U       = ((std::int8_t*)&_tex2)[1] + 8;
-            std::int8_t  tex2V       = ((std::int8_t*)&_tex2)[0] + 8;
-            std::int8_t* pShortArray = (std::int8_t*)&_array->data[p + 7];
-            pShortArray[0]           = tex2U;
-            pShortArray[1]           = tex2V;
+            std::int16_t  tex2U       = ((std::int16_t*)&_tex2)[1] + 8;
+            std::int16_t  tex2V       = ((std::int16_t*)&_tex2)[0] + 8;
+            std::int16_t* pShortArray = (std::int16_t*)&_array->data[p + 7];
+            pShortArray[0]            = tex2U;
+            pShortArray[1]            = tex2V;
 #else
             _array->data[p + 7] = _tex2;
 #endif
@@ -1132,15 +1132,21 @@ std::uint32_t _ConvertF32toX11Y11Z10N(float x, float y, float z) {
 #endif
 
     const std::uint32_t uX =
-        ((std::int32_t(std::max(min(((x) * 2047.f - 1.f) * 0.5f, 1023.f), -1024.f))
+        ((std::int32_t(
+              std::max(std::min(((x) * 2047.f - 1.f) * 0.5f, 1023.f), -1024.f)
+          )
           & (X11Y11Z10N_X_MASK >> X11Y11Z10N_X_SHIFT))
          << X11Y11Z10N_X_SHIFT);
     const std::uint32_t uY =
-        ((std::int32_t(std::max(min(((y) * 2047.f - 1.f) * 0.5f, 1023.f), -1024.f))
+        ((std::int32_t(
+              std::max(std::min(((y) * 2047.f - 1.f) * 0.5f, 1023.f), -1024.f)
+          )
           & (X11Y11Z10N_Y_MASK >> X11Y11Z10N_Y_SHIFT))
          << X11Y11Z10N_Y_SHIFT);
     const std::uint32_t uZ =
-        ((std::int32_t(std::max(min(((z) * 1023.f - 1.f) * 0.5f, 511.f), -512.f))
+        ((std::int32_t(
+              std::max(std::min(((z) * 1023.f - 1.f) * 0.5f, 511.f), -512.f)
+          )
           & (X11Y11Z10N_Z_MASK >> X11Y11Z10N_Z_SHIFT))
          << X11Y11Z10N_Z_SHIFT);
     const std::uint32_t xyz = uX | uY | uZ;
